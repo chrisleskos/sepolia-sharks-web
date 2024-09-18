@@ -1,0 +1,372 @@
+body {
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    --logo-size: 250px;
+    --nav-height: 5rem;
+    --card-color: #0d343f;
+    --neon-color: #45fcad;
+    --gold-color: #fed004;
+    --background-blue: #0d243f;
+}
+
+header {
+    position: relative;
+    height: calc(100% - var(--nav-height));
+    width: 100vw;
+    overflow: hidden;
+    z-index: 1;
+}
+
+header .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+header .background > img {
+    position: absolute;
+    width: auto;
+    height: 130%;
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: 0;
+    z-index: 0;
+}
+
+header .header-logo {
+    position: absolute;
+    display: flex;
+    margin-top: calc(100vh - var(--nav-height) - var(--logo-size) - 1rem);
+    justify-content: center;
+    width: 100%;
+    transform: translate(0, 0%);
+    z-index: 3;
+}
+
+header .header-logo img {
+    height: var(--logo-size);
+    position: fixed;
+}
+
+header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background: linear-gradient(transparent, var(--background-blue) 20%, var(--background-blue), var(--neon-color) 99.9%);
+    opacity: 0.6;
+}
+
+main {
+    background: linear-gradient(var(--neon-color) ,var(--background-blue) 1%);
+    width: 100%;
+    margin: 0;
+    padding-bottom: 10rem;
+}
+
+nav {
+    display: flex;
+    height: var(--nav-height);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 2.3rem;
+    padding: 10px 0;
+}
+
+nav .nav-options {
+    display: flex;
+    align-items: center;
+    font-family: "Moon Dance", cursive;
+}
+
+nav .nav-options a {
+    text-decoration: none;
+    color: var(--neon-color);
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+nav .nav-options .selected {
+    color: #fed004;
+}
+
+nav .nav-options a:hover {
+    color: #fed004;
+    font-weight: 600;
+}
+
+.season-label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10rem 0;
+}
+
+.season-label > div {
+    background-color: var(--background-blue);
+    padding:10px  6rem;
+    color: white;
+    text-align: center;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 4rem;
+    transform: translate(-50% -150%);
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
+
+.season-label::after {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 2px;
+    background-color: white;
+}
+
+
+.positions {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.position-card {
+    width: 20rem;
+    height: 16rem;
+    background-color: var(--card-color);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    box-shadow: 10px 5px 20px black;
+}
+
+.position-card > div {
+    width: 100%;
+}
+
+.position-card .league-title {
+    box-shadow: 0px 10px 40px black;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.35rem;
+    color: white;
+    background: var(--card-color);
+}
+
+.position-card .league-title .round {
+    font-size: 0.8rem;
+    color: rgb(160, 190, 190);
+}
+
+.position-card .position-games {
+    font-size: 5rem;
+    text-align: center;
+    color: white;
+    font-family: "Rubik Mono One", monospace;
+}
+
+.position-card .status {
+    text-align: center;
+    background-color: var(--card-color);
+    color: white;
+    padding-bottom: 5px;
+}
+
+.next-match {
+    display: flex;
+    justify-content: center;
+    margin: 15rem 0px 3rem 0;
+}
+
+.next-match-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding: 0 3rem;
+    background: linear-gradient(90deg, transparent, transparent 3%, white 70%);
+    overflow: hidden;
+}
+
+.next-match-container::after, .next-match-container::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 10rem;
+    width: 10rem;
+    transform: rotateZ(45deg);
+    border-right: var(--background-blue) 10px solid;
+    border-top: var(--background-blue) 10px solid;
+    z-index: 0;
+}
+
+.next-match-container::after{
+    left: 25%;
+}
+
+.next-match-container::before{
+    left: 29%;
+}
+
+.next-match-label {
+    display: flex;
+    align-items: center;
+    font-size: 5rem;
+    text-align: right;
+    font-family: "Rubik Mono One", monospace;
+    color: var(--background-blue);
+    line-height: 3.8rem;
+    padding-right: 3rem;
+}
+
+.next-opposing-team {
+    z-index: 1;
+}
+
+.next-opposing-team img {
+    width: 10rem;
+}
+
+.next-match-details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+
+.next-match-league {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.next-match-date {
+    font-size: 1.2rem;
+}
+
+.last-five-games {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.last-five-games .game-outcome {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    border: white 1px solid;
+    margin: 0 0.1rem;
+}
+
+.last-five-games .win {
+    background-color: rgb(10, 255, 10);
+}
+
+.last-five-games .lost {
+    background-color: rgb(205, 10, 10);
+}
+
+.schedule-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.schedule-button-container button {
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.6rem 2rem;
+    background-color: var(--background-blue);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px white solid;
+}
+
+footer {
+    background: linear-gradient(var(--background-blue), 80%, var(--neon-color) 100%);
+    width: 100vw;
+    overflow: hidden;
+}
+
+footer .sponsors {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer .sponsors img {
+    width: 20rem;
+    cursor: pointer;
+}
+
+footer .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7rem 0;
+}
+
+footer .contact > div {
+    margin: 0 2rem;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    color: white;
+}
+
+footer .contact img {
+    width: 3rem;
+    margin-right: 0.6rem;
+} 
+
+@media screen and (max-width: 600px){
+    footer .sponsors {
+        flex-direction: column;
+    }
+
+    footer .sponsors img {
+        width: 10rem;
+    }
+
+    .positions {
+        flex-direction: column;
+    }
+
+    .position-card {
+        width: 10rem;
+    }
+
+    .season-label > div{
+        font-size: 1rem;
+        padding:10px  2rem;
+    }
+
+    .next-match .next-match-container {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        width: 20vw;
+    }
+
+}
