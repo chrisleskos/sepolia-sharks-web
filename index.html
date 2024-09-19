@@ -1,107 +1,145 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sepolia Sharks</title>
-    <link rel="stylesheet" type="text/css" href="styling.css">
+    <link rel="stylesheet" type="text/css" href="styling.css" />
 
     <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div class="background">
-            <img src="img/sharks/squad.jpg">
-        </div>
-        <div class="header-logo">
-            <img src="img/sharks/logo.png">
-        </div>
+      <div class="background">
+        <img src="img/sharks/squad2.jpg" />
+      </div>
+      <div class="header-logo">
+        <img src="img/sharks/logo.png" />
+      </div>
     </header>
     <main>
-        <nav>
-            <div class="nav-options">
-                <a href="index.html" class="selected">Home</a>
-                <a>Squad</a>
-                <a>Stats</a>
-            </div>
-        </nav>
+      <nav>
+        <div class="nav-options">
+          <a href="index.html" class="selected">Home</a>
+          <a href="squad.html">Squad</a>
+          <a href="stats.html">Stats</a>
+        </div>
+      </nav>
 
-        <div class="season-label">
-            <div>Season 24/25</div>
-        </div>
+      <div class="season-label">
+        <div>Season 24/25</div>
+      </div>
 
-        <div class="positions">
-            <div class="position-card">
-                <div class="league-title">
-                    <span>Winter Evolution League</span>
-                    <br>
-                    <span class="round">Regular Season - Game 0</span>
-                </div>
-                <div class="position-games">#2</div>
-                <div class="status">COMPETING</div>
-            </div>
-            <div class="position-card">
-                <div class="league-title">
-                    <span>Winter Cup</span>
-                    <br>
-                    <span class="round">Group Stage - Game 0</span>
-                </div>
-                <div class="position-games">#3</div>
-                <div class="status">COMPETING</div>
-            </div>
-            <div class="position-card">
-                <div class="league-title">
-                    <span>Summer Evolution League</span>
-                    <br>
-                    <span class="round">-</span>
-                </div>
-                <div class="position-games">-</div>
-                <div class="status">DIDN'T PARTICIPATE</div>
-            </div>
+      <div class="positions">
+        <div class="position-card">
+          <div class="league-title">
+            <span>Winter Evolution League</span>
+            <br />
+            <span class="round">Regular Season - Game 0</span>
+          </div>
+          <div class="position-games">#2</div>
+          <div class="status">COMPETING</div>
         </div>
-        <div class="next-match">
-            <div class="next-match-container">
-                <div class="next-match-label">NEXT<br>MATCH</div>
-                <div class="next-opposing-team"><img src="https://basketaki-web.b-cdn.net/teams/alpinists-bc.png"></div>
-                <div class="next-match-details">
-                    <div class="next-match-league">Winter Cup - Group Stage</div>
-                    <div class="next-match-date">SEPTEMBER 20 | 22:30</div>
-                    <div class="next-match-location">Basketaki Arena</div>
-                </div>
-            </div>
+        <div class="position-card">
+          <div class="league-title">
+            <span>Winter Cup</span>
+            <br />
+            <span class="round">Group Stage - Game 0</span>
+          </div>
+          <div class="position-games">#3</div>
+          <div class="status">COMPETING</div>
         </div>
-        <div class="last-five-games">
-            <div class="game-outcome" id="game1"></div>
-            <div class="game-outcome" id="game2"></div>
-            <div class="game-outcome" id="game3"></div>
-            <div class="game-outcome" id="game4"></div>
-            <div class="game-outcome" id="game5"></div>
+        <div class="position-card">
+          <div class="league-title">
+            <span>Summer Evolution League</span>
+            <br />
+            <span class="round">-</span>
+          </div>
+          <div class="position-games">-</div>
+          <div class="status">DIDN'T PARTICIPATE</div>
         </div>
-        <div class="schedule-button-container">
-            <button>
-                SEE SCHEDULE
-            </button>
+      </div>
+      <div class="next-match">
+        <div class="next-match-container">
+          <div class="next-match-label">NEXT<br />MATCH</div>
+          <div class="next-opposing-team">
+            <img src="https://basketaki-web.b-cdn.net/teams/alpinists-bc.png" />
+          </div>
+          <div class="next-match-details">
+            <div class="next-match-league">Winter Cup</div>
+            <div class="next-match-round">Group Stage | Game 1 | AWAY</div>
+            <div class="next-match-date">⏲ SEPTEMBER 20 | 22:30</div>
+            <div class="next-match-location">📌 Basketaki Arena</div>
+          </div>
         </div>
+      </div>
+      <div class="last-five-games">
+        <div class="game-outcome win" id="game1"></div>
+        <div class="game-outcome" id="game2"></div>
+        <div class="game-outcome" id="game3"></div>
+        <div class="game-outcome" id="game4"></div>
+        <div class="game-outcome" id="game5"></div>
+      </div>
+      <div class="schedule-button-container">
+        <button>SEE SCHEDULE</button>
+      </div>
     </main>
     <footer>
-        <div class="sponsors">
-            <div><img src="img/sponsors/sayprinlogo.png" onclick="location.href='https://www.sayprint.gr/main-home/'"></div>
-            <div><img src="img/sponsors/nebo.png" onclick="location.href='https://www.instagram.com/nebo.tinos?igsh=MWpzNmhnMWVrdTl6bw=='"></div>
-            <div><img src="img/sponsors/MiniVanTaxi LOGO.jpg" onclick="location.href='https://minivantaxi.gr/el/'"></div>
-            <div><img src="img/sponsors/stergios.jpg" onclick="location.href='https://www.xo.gr/profile/profile-911500612/el/'"></div>
+      <div class="sponsors">
+        <div>
+          <img
+            src="img/sponsors/sayprinlogo.png"
+            onclick="location.href='https://www.sayprint.gr/main-home/'"
+          />
         </div>
-        <div class="contact">
-            <div class="insta"><img src="img/contact/Insta.webp"><span>@sepolia.sharks</span></div>
-            <div class="fb"><img src="img/contact/fb.png"><span>SEPOLIA SHARKS</span></div>
-            <div class="tel"><img src="img/contact/tel.png"><span>6900000000</span></div>
-            <div class="email"><img src="img/contact/mail.webp"><span>sepolia.sharks19@gmail.com</span></div>
+        <div>
+          <img
+            src="img/sponsors/nebo.png"
+            onclick="location.href='https://www.instagram.com/nebo.tinos?igsh=MWpzNmhnMWVrdTl6bw=='"
+          />
         </div>
+        <div>
+          <img
+            src="img/sponsors/MiniVanTaxi LOGO.jpg"
+            onclick="location.href='https://minivantaxi.gr/el/'"
+          />
+        </div>
+        <div>
+          <img
+            src="img/sponsors/stergios.jpg"
+            onclick="location.href='https://www.xo.gr/profile/profile-911500612/el/'"
+          />
+        </div>
+      </div>
+      <div class="contact">
+        <a class="insta" href="https://www.instagram.com/sepolia.sharks">
+          <img src="img/contact/Insta.webp" /><span>@sepolia.sharks</span>
+        </a>
+        <a class="fb" href="https://www.facebook.com/">
+          <img src="img/contact/fb.png" /><span>SEPOLIA SHARKS</span>
+        </a>
+        <a class="tel" href="tel: 6900000000">
+          <img src="img/contact/tel.png" /><span>6900000000</span>
+        </a>
+        <a class="email" href="mailto: sepolia.sharks19@gmail.com">
+          <img src="img/contact/mail.webp" /><span
+            >sepolia.sharks19@gmail.com</span
+          >
+        </a>
+      </div>
     </footer>
-</body>
+    <script src="js.js"></script>
+  </body>
 </html>
