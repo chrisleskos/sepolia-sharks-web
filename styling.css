@@ -46,7 +46,7 @@ header .background > img {
 header .header-logo {
   position: absolute;
   display: flex;
-  margin-top: calc(100vh - var(--nav-height) - var(--logo-size) - 1rem);
+  margin-top: calc(100vh - var(--nav-height) - var(--logo-size) - 9rem);
   justify-content: center;
   width: 100%;
   transform: translate(0, 0%);
@@ -82,6 +82,7 @@ main {
   padding-bottom: 10rem;
 }
 
+/* shark image in the background */
 main::after {
   content: "";
   display: block;
@@ -279,6 +280,7 @@ nav .nav-options a:hover {
   display: flex;
   flex-direction: column;
   padding-left: 2rem;
+  color: var(--background-blue);
 }
 
 .next-match-league {
@@ -323,7 +325,9 @@ nav .nav-options a:hover {
   justify-content: center;
 }
 
-.schedule-button-container button {
+/* .schedule-button-container button, */
+.schedule-button-container > a {
+  text-decoration: none;
   border: none;
   font-size: 1.5rem;
   padding: 0.6rem 2rem;
@@ -332,6 +336,7 @@ nav .nav-options a:hover {
   cursor: pointer;
   border-radius: 5px;
   border: 2px white solid;
+  z-index: 2;
 }
 
 footer {
@@ -390,12 +395,27 @@ footer .contact img {
 }
 
 @media screen and (max-width: 1300px) {
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    --logo-size: 160px;
+    --nav-height: 5rem;
+  }
+
+  header .header-logo {
+    margin-top: calc(100vh - var(--nav-height) - var(--logo-size) - 13rem);
+  }
+
   footer .sponsors {
     flex-direction: column;
   }
 
   footer .sponsors img {
     width: 90vw;
+  }
+
+  footer .contact > a {
+    margin-bottom: 1.1rem;
   }
 
   .positions {
@@ -432,6 +452,8 @@ footer .contact img {
 
   .next-match-label {
     text-align: left;
+    font-size: 3.5rem;
+    line-height: 3rem;
   }
 
   .next-match-league,
@@ -441,8 +463,36 @@ footer .contact img {
     padding-left: 4rem;
   }
 
+  .next-match-league {
+    font-size: 1.5rem;
+  }
+
+  .next-match-round {
+    font-size: 0.7rem;
+  }
+
+  .next-match-date,
+  .next-match-location {
+    font-size: 1rem;
+    padding-bottom: 5px;
+  }
+
   footer .contact {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  header .background > img {
+    animation: x-axis-scroll 16s ease-in-out 0s alternate infinite;
+  }
+
+  @keyframes x-axis-scroll {
+    from {
+      transform: translate(-23%, 0);
+      /* left: 420%; */
+    }
+    to {
+      transform: translate(-78%, 0);
+    }
   }
 }
