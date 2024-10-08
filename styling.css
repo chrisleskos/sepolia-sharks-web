@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "comic font";
+  src: url(fonts/badaboom_bb/BADABB__.TTF);
+}
+
+@font-face {
+  font-family: "calligraphic font";
+  src: url(fonts/billyscriptian/Billy\ Scriptian.ttf);
+}
+
+@font-face {
+  font-family: "naration box";
+  src: url(fonts/narationbox/animeace2_reg.ttf);
+}
+
+@font-face {
+  font-family: "Rubik Mono One";
+  src: url(fonts/rubikmonoone/RubikMonoOne-Regular.ttf);
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -8,7 +28,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   --logo-size: 250px;
-  --nav-height: 5rem;
+  --nav-height: 2.4rem;
   --card-color: #0d343f;
   --neon-color: #45fcad;
   --gold-color: #fed004;
@@ -17,7 +37,7 @@ body {
 
 header {
   position: relative;
-  height: calc(100% - var(--nav-height));
+  height: 100%;
   width: 100%;
   overflow: hidden;
   z-index: 1;
@@ -46,7 +66,7 @@ header .background > img {
 header .header-logo {
   position: absolute;
   display: flex;
-  margin-top: calc(100vh - var(--nav-height) - var(--logo-size) - 9rem);
+  margin-top: calc(100vh - var(--logo-size) - 9rem);
   justify-content: center;
   width: 100%;
   transform: translate(0, 0%);
@@ -58,6 +78,7 @@ header .header-logo img {
   position: fixed;
 }
 
+/* Fade filter */
 header::after {
   content: "";
   display: block;
@@ -79,6 +100,7 @@ main {
   background: linear-gradient(var(--neon-color), var(--background-blue) 1%);
   width: 100%;
   margin: 0;
+  height: fit-content;
   padding-bottom: 10rem;
 }
 
@@ -102,18 +124,26 @@ nav {
   position: relative;
   display: flex;
   height: var(--nav-height);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   font-size: 2.3rem;
   padding: 10px 0;
   z-index: 10;
+  background-color: var(--background-blue);
+  /* border-bottom: var(--neon-color) 3px solid; */
+  background: linear-gradient(
+    var(--background-blue),
+    var(--background-blue) 88%,
+    var(--neon-color) 99.9%
+  );
 }
 
 nav .nav-options {
   display: flex;
   align-items: center;
-  font-family: "Moon Dance", cursive;
+  font-family: "comic font";
+  margin-left: 1.5rem;
 }
 
 nav .nav-options a {
@@ -132,21 +162,27 @@ nav .nav-options a:hover {
   font-weight: 600;
 }
 
+nav .sharkattack-epigraphy {
+  font-family: "calligraphic font";
+  font-size: 1rem;
+  color: var(--gold-color);
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
 .season-label {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   margin: 10rem 0;
 }
 
 .season-label > div {
-  background-color: var(--background-blue);
-  padding: 10px 6rem;
   color: white;
   text-align: center;
-  font-family: "Rubik Mono One", monospace;
+  font-family: "comic font";
   font-size: 4rem;
   transform: translate(-50% -150%);
   top: 50%;
@@ -154,14 +190,11 @@ nav .nav-options a:hover {
   z-index: 2;
 }
 
+.season-label::before,
 .season-label::after {
-  position: absolute;
   content: "";
   display: block;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
+  width: 20%;
   height: 2px;
   background-color: white;
 }
@@ -188,6 +221,10 @@ nav .nav-options a:hover {
   box-shadow: 10px 5px 20px black;
 }
 
+.not-active-league {
+  opacity: 0.4 !important;
+}
+
 .position-card > div {
   width: 100%;
 }
@@ -210,7 +247,7 @@ nav .nav-options a:hover {
   font-size: 5rem;
   text-align: center;
   color: white;
-  font-family: "Rubik Mono One", monospace;
+  font-family: "Rubik Mono One";
 }
 
 .position-card .status {
@@ -221,51 +258,54 @@ nav .nav-options a:hover {
 }
 
 .next-match {
-  display: flex;
-  justify-content: center;
   margin: 15rem 0px 3rem 0;
+  width: 100%;
 }
 
 .next-match-container {
   display: flex;
   position: relative;
-  justify-content: center;
-  padding: 0 3rem;
-  background: linear-gradient(90deg, transparent, transparent 3%, white 70%);
+  flex-wrap: wrap;
+  /* padding: 0 3rem; */
+  /* background: linear-gradient(90deg, transparent, transparent 3%, white 70%); */
+  background: url(img/generic/comicbg.jpg);
   overflow: hidden;
+  width: 100%;
 }
 
-.next-match-container::after,
-.next-match-container::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  height: 10rem;
-  width: 10rem;
-  transform: rotateZ(45deg);
-  border-right: var(--background-blue) 10px solid;
-  border-top: var(--background-blue) 10px solid;
-  z-index: 0;
-}
-
-.next-match-container::after {
-  left: 25%;
-}
-
-.next-match-container::before {
-  left: 29%;
+.next-match-container > div {
+  margin-left: 4rem;
 }
 
 .next-match-label {
+  position: relative;
   display: flex;
   align-items: center;
   font-size: 5rem;
-  text-align: right;
-  font-family: "Rubik Mono One", monospace;
-  color: var(--background-blue);
-  line-height: 3.8rem;
-  padding-right: 3rem;
+  font-family: "comic font";
+  color: rgb(236, 158, 15);
+  z-index: 1;
+  line-height: 3.9rem;
+  margin-left: -6rem;
+  width: fit-content;
+  left: 0px;
+}
+
+.next-match-label .main-text,
+.next-match-label::after {
+  display: block;
+  width: 100%;
+  z-index: 1;
+}
+
+.next-match-label::after {
+  content: "NEXT \A MATCH";
+  white-space: pre;
+  position: absolute;
+  color: black;
+  left: 3px;
+  z-index: 0;
+  font-size: 5.2rem;
 }
 
 .next-opposing-team {
@@ -276,24 +316,56 @@ nav .nav-options a:hover {
   width: 10rem;
 }
 
-.next-match-details {
+.next-match-scheduled {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding-left: 2rem;
+  align-items: center;
+  justify-content: center;
+  font-family: "naration box";
+  overflow: visible;
+  background-repeat: no-repeat;
+  white-space: nowrap;
+  margin-left: 55rem;
+}
+
+.next-match-scheduled::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: url(img/generic/comic-boom.png);
+  background-size: 100%;
+  background-position: 50%;
+  width: 250%;
+  height: 170%;
+  z-index: 0;
+}
+
+.next-match-details {
+  padding: 0.8rem 1.2rem;
   color: var(--background-blue);
+  font-family: "naration box";
+  background-color: rgb(255, 255, 186);
+  height: 20%;
+  white-space: nowrap;
+  border: 1px solid rgb(225, 225, 123);
+  margin-left: -6rem;
 }
 
 .next-match-league {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .next-match-round {
-  margin-bottom: 1rem;
+  font-size: 0.6rem;
+  margin-bottom: 0.3rem;
 }
 
 .next-match-date,
 .next-match-location {
-  font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
+  font-size: 0.9rem;
   padding-bottom: 10px;
 }
 
@@ -358,6 +430,7 @@ footer .sponsors {
 footer .sponsors img {
   width: 20rem;
   cursor: pointer;
+  width: 22vw;
 }
 
 footer .contact {
@@ -394,16 +467,16 @@ footer .contact img {
   z-index: 2;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 800px) {
   body {
     margin: 0;
     overflow-x: hidden;
     --logo-size: 160px;
-    --nav-height: 5rem;
+    --nav-height: 1.3rem;
   }
 
   header .header-logo {
-    margin-top: calc(100vh - var(--nav-height) - var(--logo-size) - 13rem);
+    margin-top: calc(100vh - var(--logo-size) - 13rem);
   }
 
   footer .sponsors {
@@ -429,8 +502,8 @@ footer .contact img {
   }
 
   .season-label > div {
-    font-size: 1rem;
-    padding: 10px 2rem;
+    font-size: 2rem;
+    /* padding: 10px 2rem; */
   }
 
   .next-match .next-match-container {

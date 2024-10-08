@@ -4,24 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sepolia Sharks</title>
     <link rel="stylesheet" type="text/css" href="styling.css" />
-
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Rubik+Mono+One&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <header>
+      <nav>
+        <div class="nav-options">
+          <a href="index.html" class="selected">Home</a>
+          <a href="squad.html">Squad</a>
+          <a href="stats.html">Stats</a>
+        </div>
+        <div class="sharkattack-epigraphy">sharkattack</div>
+      </nav>
       <div class="background">
         <img src="img/sharks/squad2.jpg" />
       </div>
@@ -30,18 +23,10 @@
       </div>
     </header>
     <main>
-      <nav>
-        <div class="nav-options">
-          <a href="index.html" class="selected">Home</a>
-          <a href="squad.html">Squad</a>
-          <a href="stats.html">Stats</a>
-        </div>
-      </nav>
-
+      <div>.</div>
       <div class="season-label">
         <div>Season 24/25</div>
       </div>
-
       <div class="positions">
         <div class="position-card">
           <div class="league-title">
@@ -52,16 +37,16 @@
           <div class="position-games">#2</div>
           <div class="status">COMPETING</div>
         </div>
-        <div class="position-card">
+        <div class="position-card not-active-league">
           <div class="league-title">
             <span>Winter Cup</span>
             <br />
-            <span class="round">Group Stage - Game 0</span>
+            <span class="round">Group Stage - Game 3</span>
           </div>
           <div class="position-games">#3</div>
-          <div class="status">COMPETING</div>
+          <div class="status">DIDN'T QUALIFY</div>
         </div>
-        <div class="position-card">
+        <div class="position-card not-active-league">
           <div class="league-title">
             <span>Summer Evolution League</span>
             <br />
@@ -73,18 +58,22 @@
       </div>
       <div class="next-match">
         <div class="next-match-container">
-          <div class="next-match-label">NEXT<br />MATCH</div>
+          <div class="next-match-label">
+            <div class="main-text">NEXT<br />MATCH</div>
+          </div>
+          <div class="next-match-details">
+            <div class="next-match-league">Evolution League</div>
+            <div class="next-match-round">Game 1 | AWAY</div>
+          </div>
           <div class="next-opposing-team">
             <img
               id="opposing-team-logo"
               alt="opposing-team-logo"
-              src="https://basketaki-web.b-cdn.net/teams/black-mamba.png"
+              src="https://basketaki-web.b-cdn.net/teams/jnxd-apes.png"
             />
           </div>
-          <div class="next-match-details">
-            <div class="next-match-league">Winter Cup</div>
-            <div class="next-match-round">Group Stage | Game 2 | HOME</div>
-            <div class="next-match-date">📅 SEPTEMBER 28 | 16:45</div>
+          <div class="next-match-scheduled">
+            <div class="next-match-date">📅 SEPT. 28 | 16:45</div>
             <div class="next-match-location">📌 Athens Sports Hall</div>
           </div>
         </div>
@@ -92,8 +81,8 @@
       <div class="last-five-games">
         <div class="game-outcome win" id="game1"></div>
         <div class="game-outcome lost" id="game2"></div>
-        <div class="game-outcome" id="game3"></div>
-        <div class="game-outcome" id="game4"></div>
+        <div class="game-outcome lost" id="game3"></div>
+        <div class="game-outcome win" id="game4"></div>
         <div class="game-outcome" id="game5"></div>
       </div>
       <div class="schedule-button-container">
