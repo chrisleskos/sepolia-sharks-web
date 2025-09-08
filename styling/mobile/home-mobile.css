@@ -1,0 +1,182 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro .intro-title {
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.intro .call-to-action-menu {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  height: 95%;
+  border-radius: 25px;
+  overflow: hidden;
+  background: url(../../img/auxilary/basketball-pile-3-vert.png);
+  background-size: 100%;
+  align-items: flex-start;
+  justify-content: space-around;
+  color: rgb(255, 247, 233);
+
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.cta-menu-vertical-line {
+  height: 1px;
+  width: 40%;
+  border-radius: 25px;
+  background-color: rgb(255, 247, 233);
+  margin: auto;
+}
+
+.cta-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10px;
+  width: auto;
+  height: 25%;
+}
+
+.cta-title {
+  margin: 3rem 0 1rem 0;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.cta-text {
+  height: 80%;
+}
+
+.cta-btn {
+  display: inline;
+  width: fit-content;
+  margin: 2rem 0;
+  cursor: pointer;
+
+  padding: 7px 12px;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  text-decoration: none;
+
+  font-size: 0.8rem;
+}
+
+.meet-zaharias-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5rem;
+}
+
+.meet-zaharias-wrap img {
+  width: 70%;
+  margin-left: -4rem;
+}
+
+.meet-zaharias-text {
+  /* width: 30%; */
+  margin-left: -2.3rem;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.meet-zaharias-title {
+  font-size: 2rem;
+  padding: 20px 0;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.meet-zaharias-descr {
+  font-size: 0.9rem;
+  padding: 3px;
+}
+
+.zaharias-social-btn-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.zaharias-social-btn-wrap > a {
+  display: block;
+  width: fit-content;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: white;
+  border-radius: 15px;
+  margin: 0.3rem 0 0 0;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  cursor: pointer;
+  box-shadow: 0px 0px 3.5px 0px black;
+}
+
+.zaharias-ig-btn {
+  background: linear-gradient(
+    to top right,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+}
+
+.zaharias-tiktok-btn {
+  background: black;
+}
+
+.next-match-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-direction: column;
+  height: 40rem;
+  align-items: flex-end;
+  padding-top: 7rem;
+}
+
+.next-match-wrap .next-match-title {
+  font-size: 2.3rem;
+  width: 100%;
+  padding-left: 2rem;
+}
+
+.next-match-wrap img {
+  margin-left: auto;
+  width: 10rem;
+}
+
+.next-match-wrap .match-details-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  padding: 0 0 0 2rem;
+  font-size: 1rem;
+}

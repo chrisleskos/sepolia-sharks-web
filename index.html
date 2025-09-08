@@ -11,8 +11,6 @@
     <link rel="manifest" href="/site.webmanifest" />
     <!-- Uses android-chrome icons -->
 
-    <link rel="stylesheet" type="text/css" href="styling/styling.css" />
-
     <link
       rel="stylesheet"
       type="text/css"
@@ -60,6 +58,17 @@
       media="screen and (orientation: landscape)"
       href="styling/main.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styling/mobile/home-mobile.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (orientation: landscape)"
+      href="styling/home.css"
+    />
 
     <link rel="stylesheet" type="text/css" href="styling/mobile/footer.css" />
 
@@ -67,7 +76,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Rubik+Mono+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap"
       rel="stylesheet"
     />
 
@@ -108,9 +122,6 @@
           <a href="stats.html">Stats</a>
         </div>
         <div class="nav-social">
-          <!-- <a href="https://www.instagram.com/sepolia.sharks/">
-            <img src="img/contact/facebook.webp" />
-          </a> -->
           <a href="https://www.instagram.com/sepolia.sharks/">
             <img src="img/contact/insta.png" />
           </a>
@@ -152,19 +163,76 @@
       <div class="header-logo">
         <img src="img/sharks/logo.png" />
       </div>
+      <div class="intro">
+        <div class="intro-title">Just an amateur team from Sepolia</div>
+        <div class="call-to-action-menu">
+          <div class="cta-wrap cta-next-match-wrap">
+            <div class="cta-title cta-next-match-title">Επόμενος αγώνας</div>
+            <div class="cta-text cta-next-match-text">
+              Δες τις λεπτομέρειες για να παρακολουθήσεις τον επόμενο αγώνα μας.
+            </div>
+            <a href="#next-match" class="cta-btn cta-next-match-btn"
+              >Δες περισσότερα</a
+            >
+          </div>
+          <div class="cta-menu-vertical-line"></div>
+          <div class="cta-wrap cta-meet-squad-wrap">
+            <div class="cta-title cta-meet-squad-title">Γνώρισε την ομάδα</div>
+            <div class="cta-text cta-meet-squad-text">
+              Δες τα μέλη της ομάδας μας για τη Σεζόν 25/26.
+            </div>
+            <a href="squad.html" class="cta-btn cta-meet-squad-btn"
+              >Δες περισσότερα</a
+            >
+          </div>
+          <div class="cta-menu-vertical-line"></div>
+          <div class="cta-wrap cta-zaharias-wrap">
+            <div class="cta-title cta-zaharias-title">Γνώρισε τον Ζαχαρία</div>
+            <div class="cta-text cta-zaharias-text">
+              Έχουμε και μασκότ! Μπορεί πολλές φορές να ξεφεύγει από τους
+              τρόπους ευγενείας, αλλά αυτός είναι ο ρόλος του.
+            </div>
+            <a href="#zaharias" class="cta-btn cta-zaharias-btn"
+              >Δες περισσότερα</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="meet-zaharias-wrap" id="zaharias">
+        <img src="img/zaharias/happy.png" alt="" />
+        <div class="meet-zaharias-text">
+          <div class="meet-zaharias-title">Meet Zaharias</div>
+          <div class="meet-zaharias-descr">
+            Η μασκότ της ομάδας μας απέκτησε φωνή. Ακουλούθησέ τον εδώ για να
+            μην χάνεις τις καυστικές απόψεις του... στα πάντα.
+          </div>
+          <div class="zaharias-social-btn-wrap">
+            <a
+              href="https://www.instagram.com/zaharias.shark/"
+              class="zaharias-ig-btn"
+            >
+              @zaharias.shark
+            </a>
+            <a
+              href="https://www.tiktok.com/@zaxarias_shark"
+              class="zaharias-tiktok-btn"
+            >
+              @zaxarias_shark
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="next-match-wrap" id="next-match">
+        <div class="next-match-title">Επόμενος αγώνας</div>
+        <div class="match-details-wrap">
+          <span>Δεν υπάρχει ακόμη κάποιος αγώνας στο πρόγραμμα.</span>
+        </div>
+        <img src="img/auxilary/ball.jpg" />
+      </div>
     </main>
     <footer>
       <div class="sharkattack">shark attack</div>
       <div class="contact">
-        <!-- <a class="insta" href="https://www.instagram.com/sepolia.sharks">
-          <img src="img/contact/Insta.webp" /><span>@sepolia.sharks</span>
-        </a>
-        <a class="fb" href="https://www.facebook.com/">
-          <img src="img/contact/fb.png" /><span>SEPOLIA SHARKS</span>
-        </a> -->
-        <!-- <a class="tel" href="tel: 6900000000">
-          <img src="img/contact/tel.png" /><span>6900000000</span>
-        </a> -->
         <a class="email" href="mailto: sepolia.sharks19@gmail.com">
           <img src="img/contact/mail.webp" /><span
             >sepolia.sharks19@gmail.com</span
@@ -172,6 +240,6 @@
         </a>
       </div>
     </footer>
-    <script src="js.js"></script>
+    <script src="home.js"></script>
   </body>
 </html>

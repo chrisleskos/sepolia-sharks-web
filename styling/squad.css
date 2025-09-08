@@ -7,3 +7,17 @@
   margin-left: 3rem;
   text-align: left;
 }
+
+.zaharias-wrap {
+  width: 20rem;
+}
+
+.text-bubble {
+  left: -1rem;
+  top: -4.5rem;
+  width: 19rem;
+}
+
+.text-bubble .zaharias-text {
+  font-size: 1.3rem;
+}

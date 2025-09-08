@@ -18,3 +18,22 @@ toggleButton.onclick = () => {
     });
   }
 };
+
+zahariasWrap = document.getElementById("zaharias");
+
+setTimeout(() => {
+  zahariasWrap.style.display = "block";
+
+  // then hide after 7s
+  setTimeout(() => {
+    zahariasWrap.style.display = "none";
+  }, 7000);
+}, 2000);
+
+function toggleZaharias() {
+  if (zahariasWrap.style.display === "none") {
+    zahariasWrap.style.display = "block";
+  } else {
+    zahariasWrap.style.display = "none";
+  }
+}

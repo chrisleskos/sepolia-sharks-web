@@ -1,0 +1,9 @@
+main {
+  margin-top: var(--nav-height);
+  padding: 5rem 0;
+}
+
+.coming-soon {
+  font-size: 5rem;
+  text-align: center;
+}

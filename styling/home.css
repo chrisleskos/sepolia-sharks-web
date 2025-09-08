@@ -1,0 +1,118 @@
+.intro .call-to-action-menu {
+  flex-direction: row;
+  width: 95%;
+  height: 30rem;
+  background: url(../img/auxilary/basketball-pile-3.png);
+  background-size: auto 100%;
+  align-items: center;
+  justify-content: space-around;
+  color: rgb(255, 247, 233);
+}
+
+.cta-menu-vertical-line {
+  height: 40%;
+  width: 1px;
+  border-radius: 25px;
+  background-color: rgb(255, 247, 233);
+  margin: 0;
+}
+
+.cta-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* align-items: flex-start; */
+  width: 25%;
+  height: 100%;
+}
+
+.cta-title {
+  margin: 5rem 0 2rem 0;
+  font-size: 2.3rem;
+}
+
+.cta-text {
+  height: 40%;
+}
+
+.cta-btn {
+  display: inline;
+  width: fit-content;
+  margin-bottom: 5rem;
+  cursor: pointer;
+
+  padding: 13px 17px;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.meet-zaharias-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.meet-zaharias-wrap img {
+  width: 28%;
+  margin-left: 5rem;
+}
+
+.meet-zaharias-text {
+  width: 30%;
+  margin-left: 10rem;
+}
+
+.meet-zaharias-title {
+  font-size: 3rem;
+  padding: 20px 0;
+}
+
+.meet-zaharias-descr {
+  font-size: 1.2rem;
+}
+
+.zaharias-social-btn-wrap {
+  flex-direction: row;
+}
+
+.zaharias-social-btn-wrap > a {
+  padding: 12px 18px;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  margin: 0rem 0.3rem 0 0;
+}
+
+.zaharias-social-btn-wrap > a:hover {
+  box-shadow: 0px 0px 1px 0px black;
+  transition-duration: 0.5s;
+}
+
+.next-match-wrap {
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  grid-template-rows: auto auto; /* two rows */
+  gap: 1rem; /* optional spacing */
+  height: 40rem;
+  align-items: flex-end;
+  padding-top: 5rem;
+}
+
+.next-match-wrap .next-match-title {
+  grid-column: 1 / span 2;
+  font-size: 3rem;
+}
+
+.next-match-wrap img {
+  margin-left: auto;
+  width: 50rem;
+}
+
+.next-match-wrap .match-details-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 0 0 5rem;
+  font-size: 1.7rem;
+}

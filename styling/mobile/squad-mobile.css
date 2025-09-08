@@ -1,7 +1,6 @@
 main {
   margin-top: var(--nav-height);
   padding: 5rem 0;
-  height: auto;
 }
 
 .squad-grid {
@@ -26,8 +25,9 @@ main {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  border: black solid 3px;
+  /* border: rgba(0, 0, 0, 1) solid 2px; */
   border-radius: 12px;
+  box-shadow: inset 0px 0px 15px 8px black;
 }
 
 .player.away {
@@ -41,7 +41,7 @@ main {
   top: -22%;
   width: 80%;
   height: 100%;
-  background-color: rgba(235, 235, 235, 1);
+  background-color: rgba(247, 247, 250, 1);
 }
 
 .player .shirt-neck {
@@ -78,7 +78,7 @@ main {
   transform: translate(-50%, -50%);
   left: 0;
   top: 35%;
-  background-color: rgba(235, 235, 235, 1);
+  background-color: rgba(247, 247, 250, 1);
   border-radius: 100%;
   width: 15%;
   height: 55%;
@@ -96,15 +96,21 @@ main {
 }
 
 .player .player-position {
-  position: relative;
+  position: absolute;
   background-color: transparent;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: "Epunda Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
   text-align: center;
   z-index: 3;
+  background-color: #e47041;
+  color: white;
+  padding: 5px;
+  width: 5rem;
+  border-bottom-right-radius: 7px;
+  box-shadow: 0 0 5px 3px black;
 }
 
 .player .player-name {
@@ -183,4 +189,42 @@ main {
 .kit-toggle img {
   width: 100%;
   cursor: pointer;
+}
+
+.zaharias-wrap {
+  display: none;
+  position: fixed;
+  width: 10rem;
+  height: auto;
+  right: 0;
+  bottom: -2rem;
+  z-index: 20;
+}
+
+.zaharias {
+  width: 100%;
+}
+
+.text-bubble {
+  position: absolute;
+  left: -1rem;
+  top: -2rem;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.text-bubble img {
+  width: 100%;
+}
+
+.text-bubble .zaharias-text {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
 }
