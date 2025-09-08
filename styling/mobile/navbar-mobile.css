@@ -1,0 +1,125 @@
+nav {
+  position: fixed;
+  display: flex;
+  height: var(--nav-height);
+  background-color: rgba(255, 255, 255, 1);
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  z-index: 10;
+  border-bottom: rgba(30, 30, 30, 0.4) solid 1.5px;
+}
+
+.nav-menu-wrap {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  width: 98vw;
+  z-index: 30;
+  top: 0;
+  flex-direction: column;
+  background-color: white;
+  justify-content: flex-start;
+  box-shadow: 0 0 40px 10px black;
+}
+
+.nav-menu-wrap.show {
+  display: flex;
+}
+
+.nav-menu-btn {
+  display: flex;
+  flex-direction: column;
+  height: var(--nav-height);
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  font-size: 3.5rem;
+}
+
+.nav-close-menu-btn {
+  font-size: 4rem;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  text-align: end;
+  padding-right: 1rem;
+}
+
+nav .nav-logo {
+  height: var(--nav-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .nav-logo img {
+  cursor: pointer;
+  height: 70%;
+}
+
+.nav-sharks-logo {
+  margin: 0 0 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-vertical-line {
+  display: block;
+  width: 1px;
+  height: calc(var(--nav-height) / 2);
+  background-color: rgba(10, 10, 10, 0.2);
+  margin: 0 1rem;
+}
+
+nav .nav-social {
+  display: flex;
+  align-items: center;
+  height: var(--nav-height);
+  padding: 0 6rem 0 1rem;
+  border-top: 1px solid rgba(40, 40, 40, 0.3);
+  border-bottom: 1px solid rgba(40, 40, 40, 0.3);
+}
+
+nav .nav-social img {
+  height: 25%;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+nav .nav-sponsors {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav .nav-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.9rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+nav .nav-options a {
+  text-decoration: none;
+  color: #777;
+  margin: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+nav .nav-options .selected {
+  color: #000;
+}
+
+nav .nav-options a:hover {
+  color: var(--neon-color);
+  font-weight: 600;
+}

@@ -5,71 +5,289 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sepolia Sharks</title>
 
-    <link rel="stylesheet" type="text/css" href="styling.css" />
+    <link rel="icon" href="img/favicon/favicon.ico" sizes="any" />
+    <!-- Fallback -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Uses android-chrome icons -->
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styling/mobile/base-mobile.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (orientation: landscape)"
+      href="styling/base.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styling/mobile/navbar-mobile.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (orientation: landscape)"
+      href="styling/navbar.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styling/mobile/main-mobile.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (orientation: landscape)"
+      href="styling/main.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styling/mobile/squad-mobile.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (orientation: landscape)"
+      href="styling/squad.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="styling/mobile/footer.css" />
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Rubik+Mono+One&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Rubik+Mono+One&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <main>
-      <nav>
+    <nav>
+      <div
+        class="nav-menu-btn"
+        onclick="document.getElementsByClassName('nav-menu-wrap')[0].classList.add('show')"
+      >
+        &equiv;
+      </div>
+      <a href="" class="nav-logo nav-sharks-logo">
+        <img src="img/sharks/shark3.png" />
+      </a>
+      <!-- <div class="nav-x-sign">&times;</div> -->
+      <div class="nav-vertical-line"></div>
+      <a
+        href="https://www.basketaki.com/teams/sepolia-sharks/profile"
+        class="nav-logo nav-league-logo"
+      >
+        <img src="img/sponsors/basketaki.png" />
+      </a>
+      <div class="nav-menu-wrap">
+        <div
+          class="nav-close-menu-btn"
+          onclick="document.getElementsByClassName('nav-menu-wrap')[0].classList.remove('show')"
+        >
+          &times;
+        </div>
         <div class="nav-options">
           <a href="index.html">Home</a>
           <a href="squad.html" class="selected">Squad</a>
           <a href="stats.html">Stats</a>
         </div>
-      </nav>
-      <div class="coming-soon">Coming Soon</div>
-    </main>
-    <footer>
-      <div class="sponsors">
-        <div>
-          <img
-            src="img/sponsors/sayprinlogo.png"
-            onclick="location.href='https://www.sayprint.gr/main-home/'"
-          />
+        <div class="nav-social">
+          <!-- <a href="https://www.instagram.com/sepolia.sharks/">
+            <img src="img/contact/facebook.webp" />
+          </a> -->
+          <a href="https://www.instagram.com/sepolia.sharks/">
+            <img src="img/contact/insta.png" />
+          </a>
+          <a href="https://www.tiktok.com/@sepolia.sharks">
+            <img src="img/contact/tiktok.png" />
+          </a>
         </div>
-        <div>
-          <img
-            src="img/sponsors/nebo.png"
-            onclick="location.href='https://www.instagram.com/nebo.tinos?igsh=MWpzNmhnMWVrdTl6bw=='"
-          />
-        </div>
-        <div>
-          <img
-            src="img/sponsors/MiniVanTaxi LOGO.jpg"
-            onclick="location.href='https://minivantaxi.gr/el/'"
-          />
-        </div>
-        <div>
-          <img
-            src="img/sponsors/stergios.jpg"
-            onclick="location.href='https://www.xo.gr/profile/profile-911500612/el/'"
-          />
+        <div class="nav-sponsors">
+          <a
+            href="https://www.instagram.com/nebo.tinos/"
+            class="nav-logo nav-nebo-logo"
+          >
+            <img src="img/sponsors/nebo_black.png" />
+          </a>
+          <a
+            href="https://www.sayprint.gr/main-home/"
+            class="nav-logo nav-sayprint-logo"
+          >
+            <img src="img/sponsors/sayprintlogo.png" />
+          </a>
+          <a
+            href="https://minivantaxi.gr/el/"
+            class="nav-logo nav-minivan-logo"
+          >
+            <img src="img/sponsors/MiniVanTaxi LOGO.jpg" />
+          </a>
+          <a href="https://antetokounbros.com/en/" class="nav-logo nav-ab-logo">
+            <img src="img/sponsors/ab.png" />
+          </a>
         </div>
       </div>
+    </nav>
+    <main>
+      <div class="squad-title">Season 25-26 Roster</div>
+      <div class="kit-selection-wrap">
+        <span>Home</span>
+        <div class="kit-toggle" id="kitToggle">
+          <img src="img/tools/toggle-left.png" alt="Toggle kit" />
+        </div>
+        <span>Away</span>
+      </div>
+      <div class="squad-grid">
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">PG</div>
+          <div class="player-name">ΧΟΥΣΟΣ</div>
+          <div class="player-number">4</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">PF / C</div>
+          <div class="player-name">LESKOS</div>
+          <div class="player-number">5</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">SG / SF</div>
+          <div class="player-name">ΜΗΤΡΟΥΣΗ</div>
+          <div class="player-number">6</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">SG</div>
+          <div class="player-name">BARTZO</div>
+          <div class="player-number">7</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">PG / SG</div>
+          <div class="player-name">MAKARITIS</div>
+          <div class="player-number">10</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">C</div>
+          <div class="player-name">ΒΛΑΧΟΣ</div>
+          <div class="player-number">11</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">PF / C</div>
+          <div class="player-name long">SELEMENAKIS</div>
+          <div class="player-number">12</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">PG</div>
+          <div class="player-name">ΚΑΝΤΙΩΤΗΣ</div>
+          <div class="player-number">13</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">C</div>
+          <div class="player-name">ΠΑΤΣΙΔΗΣ</div>
+          <div class="player-number">15</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">SF</div>
+          <div class="player-name">SELE</div>
+          <div class="player-number">23</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">PF</div>
+          <div class="player-name">DUKE</div>
+          <div class="player-number">24</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">PF / C</div>
+          <div class="player-name">SOVOLOS</div>
+          <div class="player-number">29</div>
+        </div>
+        <div class="player">
+          <div class="shirt-neck"></div>
+          <div class="left-block"></div>
+          <div class="right-block"></div>
+          <div class="left-arm"></div>
+          <div class="right-arm"></div>
+          <div class="player-position">SF / PF</div>
+          <div class="player-name">DEJOHN</div>
+          <div class="player-number">34</div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="sharkattack">shark attack</div>
       <div class="contact">
-        <a class="insta" href="https://www.instagram.com/sepolia.sharks">
-          <img src="img/contact/Insta.webp" /><span>@sepolia.sharks</span>
-        </a>
-        <a class="fb" href="https://www.facebook.com/">
-          <img src="img/contact/fb.png" /><span>SEPOLIA SHARKS</span>
-        </a>
-        <!-- <a class="tel" href="tel: 6900000000">
-          <img src="img/contact/tel.png" /><span>6900000000</span>
-        </a> -->
         <a class="email" href="mailto: sepolia.sharks19@gmail.com">
           <img src="img/contact/mail.webp" /><span
             >sepolia.sharks19@gmail.com</span
@@ -77,5 +295,6 @@
         </a>
       </div>
     </footer>
+    <script src="squad.js"></script>
   </body>
 </html>

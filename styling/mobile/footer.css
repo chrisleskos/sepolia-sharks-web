@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "calligraphic font";
+  src: url(../../fonts/billyscriptian/Billy\ Scriptian.ttf);
+}
+
+footer {
+  width: 100vw;
+  overflow: hidden;
+}
+
+footer .sharkattack {
+  font-size: 1.9rem;
+  color: var(--gold-color);
+  width: 70vw;
+  margin: auto;
+  text-align: center;
+  border-top: rgba(60, 60, 60, 0.2) 0.5px solid;
+  padding: 4rem 0 0 0;
+  font-family: "calligraphic font";
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+footer .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7rem 0;
+
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.7rem;
+}
+
+footer .contact > a {
+  text-decoration: none;
+  margin: 0 2rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  color: black;
+}
+
+footer .contact img {
+  width: 1rem;
+  margin-right: 0.6rem;
+}

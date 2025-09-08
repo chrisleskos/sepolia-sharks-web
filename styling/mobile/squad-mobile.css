@@ -1,0 +1,186 @@
+main {
+  margin-top: var(--nav-height);
+  padding: 5rem 0;
+  height: auto;
+}
+
+.squad-grid {
+  width: 80vw;
+  margin: auto;
+  display: grid;
+  gap: 3rem; /* spacing between items */
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+
+  --home-shirt-background: url(../../img/shirts/green.png);
+  --home-shirt-outline: var(--background-blue);
+  --away-shirt-background: url(../../img/shirts/black.png);
+  --away-shirt-outline: white;
+}
+
+.squad-grid .player {
+  width: 300px;
+  height: 300px;
+  background: var(--home-shirt-background);
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: black solid 3px;
+  border-radius: 12px;
+}
+
+.player.away {
+  background: url(../../img/shirts/black.png);
+}
+
+.player .shirt-neck,
+.player .left-block,
+.player .right-block {
+  left: 50%;
+  top: -22%;
+  width: 80%;
+  height: 100%;
+  background-color: rgba(235, 235, 235, 1);
+}
+
+.player .shirt-neck {
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  z-index: 2;
+  border: solid 10px var(--home-shirt-outline);
+}
+
+.player.away .shirt-neck {
+  border: solid 1px black;
+  outline: 7px solid var(--away-shirt-outline);
+}
+
+.player .left-block,
+.player .right-block {
+  display: block;
+  position: absolute;
+  left: 0;
+  transform: translate(-50%, -50%) rotateZ(70deg);
+  z-index: 2;
+}
+
+.player .right-block {
+  transform: translate(-50%, -50%) rotateZ(-70deg);
+  left: 100%;
+}
+
+.player .left-arm,
+.player .right-arm {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 0;
+  top: 35%;
+  background-color: rgba(235, 235, 235, 1);
+  border-radius: 100%;
+  width: 15%;
+  height: 55%;
+  border: solid 10px var(--home-shirt-outline);
+}
+
+.player.away .left-arm,
+.player.away .right-arm {
+  border: solid 1px black;
+  outline: 7px solid var(--away-shirt-outline);
+}
+
+.player .right-arm {
+  left: 100%;
+}
+
+.player .player-position {
+  position: relative;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  z-index: 3;
+}
+
+.player .player-name {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 2.2rem;
+  font-weight: 600;
+  top: 48%;
+  left: 50%;
+  color: var(--home-shirt-outline);
+  text-shadow: -2px -2px 0 var(--neon-color), 2px -2px 0 var(--neon-color),
+    -2px 2px 0 var(--neon-color), 2px 2px 0 var(--neon-color);
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.player .player-name.long {
+  font-size: 1.9rem;
+}
+
+.player.away .player-name {
+  color: var(--away-shirt-outline);
+  text-shadow: none;
+}
+
+.player .player-number {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  top: 85%;
+  left: 50%;
+  color: var(--home-shirt-outline);
+  text-shadow: -2px -2px 0 var(--neon-color), 2px -2px 0 var(--neon-color),
+    -2px 2px 0 var(--neon-color), 2px 2px 0 var(--neon-color);
+}
+
+.player.away .player-number {
+  color: var(--away-shirt-outline);
+  text-shadow: none;
+}
+
+.squad-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.kit-selection-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  margin: 5rem 0;
+}
+
+.kit-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  padding: 0;
+  background: none;
+  border: none;
+  margin: 0 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.kit-toggle img {
+  width: 100%;
+  cursor: pointer;
+}

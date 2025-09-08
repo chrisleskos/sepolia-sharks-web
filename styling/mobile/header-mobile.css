@@ -1,0 +1,39 @@
+header {
+  position: relative;
+  height: calc(
+    100vw * var(--header-img-ratio-height) / var(--header-img-ratio-width)
+  );
+  width: 100vw;
+  overflow: hidden;
+  margin-top: var(--nav-height);
+  z-index: 1;
+}
+
+header .background {
+  position: absolute;
+  height: 100vh;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+header .background > img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  transform: translate(-38%, 0);
+  left: 50%;
+  top: 0;
+  z-index: 0;
+  /* animation: x-axis-scroll 8s linear 0s forwards infinite; */
+}
+
+@keyframes x-axis-scroll {
+  from {
+    transform: translate(-20%, 0);
+    /* left: 420%; */
+  }
+  to {
+    transform: translate(-55%, 0);
+  }
+}

@@ -1,0 +1,9 @@
+.squad-grid {
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+}
+
+.squad-title {
+  font-size: 3.5rem;
+  margin-left: 3rem;
+  text-align: left;
+}

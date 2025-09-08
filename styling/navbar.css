@@ -1,0 +1,49 @@
+.nav-menu-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  height: var(--nav-height);
+  width: auto;
+  box-shadow: none;
+  align-items: center;
+}
+
+.nav-menu-btn,
+.nav-close-menu-btn {
+  display: none;
+}
+
+nav .nav-social {
+  padding: 0 6rem 0 0;
+  border: none;
+}
+
+nav .nav-sponsors {
+  display: flex;
+  margin-right: 2rem;
+}
+
+nav .nav-options {
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  margin: auto;
+  font-size: 1rem;
+}
+
+nav .nav-options a {
+  text-decoration: none;
+  color: #777;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+nav .nav-options .selected {
+  color: #000;
+}
+
+nav .nav-options a:hover {
+  color: var(--neon-color);
+  font-weight: 600;
+}

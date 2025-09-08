@@ -1,0 +1,39 @@
+main {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 10rem;
+  height: 100rem; /* to be removed */
+}
+
+/* shark image in the background */
+main::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: url(img/sharks/shark2.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+main .header-logo {
+  position: absolute;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  width: 100vw;
+  height: var(--logo-size);
+  transform: translate(0, -50%);
+  z-index: 3;
+}
+
+main .header-logo img {
+  height: 100%;
+  position: absolute;
+}

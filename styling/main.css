@@ -1,0 +1,6 @@
+main .header-logo {
+  width: 100vw;
+  height: var(--logo-size);
+  transform: translate(0, -50%);
+  z-index: 3;
+}
