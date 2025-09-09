@@ -22,7 +22,7 @@ function checkOrientation() {
   }
 }
 
-fetch("/.netlify/functions/schedule")
+fetch("https://sepoliasharks.netlify.app/.netlify/functions/schedule")
   .then((res) => res.json())
   .then((data) => {
     console.log("Earliest game date:", data.earliestDate);
