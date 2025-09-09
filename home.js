@@ -21,3 +21,12 @@ function checkOrientation() {
     clearInterval(intervalId);
   }
 }
+
+fetch("/.netlify/functions/schedule")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log("Earliest game date:", data.earliestDate);
+    // e.g. show it in the DOM
+    // document.getElementById("nextGame").textContent = data.earliestDate;
+  })
+  .catch((err) => console.error(err));
