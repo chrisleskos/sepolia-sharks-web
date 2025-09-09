@@ -8,18 +8,15 @@ export async function handler(event, context) {
     const html = await response.text();
     const $ = cheerio.load(html);
 
-    // Select all rows of the schedule table
     const rows = $("table.team-result tbody tr");
 
     let earliestDate = null;
     let earliestRow = null;
 
     rows.each((i, row) => {
-      // Grab the SECOND date cell
       const dateText = $(row).find("td.team-result__date").eq(1).text().trim();
 
       if (dateText) {
-        // Assuming format "DD/MM/YYYY"
         const [day, month, year] = dateText.split("/");
         const parsed = new Date(year, month - 1, day);
 
@@ -33,11 +30,13 @@ export async function handler(event, context) {
     if (!earliestRow) {
       return {
         statusCode: 404,
+        headers: {
+          "Access-Control-Allow-Origin": "*", // 👈 important
+        },
         body: JSON.stringify({ error: "No valid dates found" }),
       };
     }
 
-    // Return the second date cell text from the earliest row
     const earliestDateText = earliestRow
       .find("td.team-result__date")
       .eq(1)
@@ -46,11 +45,17 @@ export async function handler(event, context) {
 
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // 👈 allow frontend to call
+      },
       body: JSON.stringify({ earliestDate: earliestDateText }),
     };
   } catch (err) {
     return {
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // 👈 don’t forget error case
+      },
       body: JSON.stringify({ error: err.message }),
     };
   }
