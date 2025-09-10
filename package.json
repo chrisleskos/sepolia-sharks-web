@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "netlify-cli": "^23.5.1"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }

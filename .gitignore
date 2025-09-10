@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+netlify/functions/node_modules/
 
 # Netlify CLI local files
 .netlify/

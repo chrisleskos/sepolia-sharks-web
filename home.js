@@ -26,3 +26,5 @@ fetch("/.netlify/functions/schedule")
   .then((res) => res.json())
   .then((data) => console.log("Earliest game:", data))
   .catch((err) => console.error("Fetch error:", err));
+
+function setNextGame(json) {}
