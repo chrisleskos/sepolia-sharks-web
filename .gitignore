@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Netlify CLI local files
+.netlify/
+.netlify/state.json
+.netlify/cache/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Optional: build output (depends on your setup)
+dist/
+build/

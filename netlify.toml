@@ -1,2 +1,2 @@
-functions = "netlify/functions"
-publish = "public"
+[build]
+    functions = "netlify/functions" 
