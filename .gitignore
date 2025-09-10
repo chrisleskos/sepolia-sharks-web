@@ -24,3 +24,7 @@ Thumbs.db
 # Optional: build output (depends on your setup)
 dist/
 build/
+
+# netlify cli packages
+package.json
+package-lock.json
