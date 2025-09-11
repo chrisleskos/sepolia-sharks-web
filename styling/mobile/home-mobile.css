@@ -170,13 +170,57 @@
   width: 10rem;
 }
 
-.next-match-wrap .match-details-wrap {
-  display: flex;
-  flex-direction: column;
+.next-match-wrap .next-match-details-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 20% 20% 10% 10%;
   justify-content: center;
   align-items: flex-start;
-  height: 100%;
-  width: 100%;
+  height: 25rem;
+  width: 100vw;
   padding: 0 0 0 2rem;
-  font-size: 1rem;
+  margin-bottom: 5rem;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 250% 100%;
+}
+
+.next-match-wrap .next-match-details-wrap::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), white);
+  z-index: 0;
+}
+
+.next-match-wrap .next-match-details-wrap > div {
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.next-match-competition {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 0.7rem;
+  color: rgb(20, 60, 60);
+}
+
+.next-match-round {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.4rem;
+  padding-left: 0.4rem;
+}
+
+.next-match-team-name,
+.next-match-date,
+.next-match-place {
+  grid-column: 1 / -1; /* stretch across both columns */
 }

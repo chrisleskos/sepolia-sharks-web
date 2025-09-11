@@ -108,11 +108,11 @@
   width: 50rem;
 }
 
-.next-match-wrap .match-details-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 0 0 0 5rem;
-  font-size: 1.7rem;
+.next-match-wrap .next-match-details-wrap {
+  padding: 0 0 0 15rem;
+  background-position: 85% 100%;
+}
+
+.next-match-wrap .next-match-details-wrap::before {
+  background: linear-gradient(to right, transparent, transparent, white 90%);
 }
