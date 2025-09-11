@@ -1,3 +1,9 @@
 [build]
-    functions = "netlify/functions"
-    
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["cheerio", "node-fetch"]
+
+[functions."*"]
+  node_version = "18"
