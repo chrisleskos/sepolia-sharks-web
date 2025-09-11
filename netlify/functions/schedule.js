@@ -1,5 +1,4 @@
-const fetch = require("node-fetch");
-const cheerio = require("cheerio");
+import * as cheerio from "cheerio";
 
 export async function handler(event, context) {
   // Handle CORS preflight
