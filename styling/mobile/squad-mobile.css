@@ -1,6 +1,7 @@
 main {
   margin-top: var(--nav-height);
   padding: 5rem 0;
+  --ab-x-sharks-bg-color: #131212;
 }
 
 .squad-grid {
@@ -152,6 +153,15 @@ main {
   text-shadow: none;
 }
 
+.ab-player-logo {
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: 10px;
+  height: 2.5rem;
+  z-index: 20;
+}
+
 .squad-title {
   text-align: center;
   font-size: 1.8rem;
@@ -227,4 +237,15 @@ main {
   font-family: "Epunda Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
+}
+
+.ab-x-sharks-banner {
+  text-align: center;
+  width: 100%;
+  height: 15rem;
+  background-color: var(--ab-x-sharks-bg-color);
+}
+
+.ab-x-sharks-banner img {
+  height: 100%;
 }
