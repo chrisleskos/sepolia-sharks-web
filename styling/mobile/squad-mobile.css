@@ -159,7 +159,7 @@ main {
   left: 50%;
   top: 10px;
   height: 2.5rem;
-  z-index: 20;
+  z-index: 5;
 }
 
 .squad-title {
