@@ -174,7 +174,7 @@
   position: relative;
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: 20% 20% 10% 10%;
+  grid-template-rows: 1rem 20% 10% 10%;
   justify-content: center;
   align-items: flex-start;
   height: 25rem;
@@ -210,17 +210,32 @@
   grid-row: 1;
   font-size: 0.7rem;
   color: rgb(20, 60, 60);
+  border-radius: 10px;
+  background-color: dodgerblue;
+  color: white;
+  padding: 5px;
+  height: 1rem;
 }
 
 .next-match-round {
   grid-column: 2;
   grid-row: 1;
-  font-size: 1.4rem;
+  font-size: 2rem;
+  padding: 5px;
   padding-left: 0.4rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .next-match-team-name,
 .next-match-date,
 .next-match-place {
   grid-column: 1 / -1; /* stretch across both columns */
+}
+
+.next-match-team-name {
+  font-size: 1.3rem;
+  font-weight: 600;
 }

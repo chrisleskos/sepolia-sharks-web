@@ -96,6 +96,7 @@
   height: 40rem;
   align-items: flex-end;
   padding-top: 5rem;
+  padding-left: 15rem;
 }
 
 .next-match-wrap .next-match-title {
@@ -110,9 +111,19 @@
 
 .next-match-wrap .next-match-details-wrap {
   padding: 0 0 0 15rem;
-  background-position: 85% 100%;
+  background-size: auto 100%;
+  background-position: 45% 100%;
+  overflow: visible;
 }
 
 .next-match-wrap .next-match-details-wrap::before {
-  background: linear-gradient(to right, transparent, transparent, white 90%);
+  background: linear-gradient(to right, transparent, transparent, white 60%);
+}
+
+.next-match-round {
+  font-size: 3rem;
+}
+
+.next-match-team-name {
+  font-size: 1.7rem;
 }
