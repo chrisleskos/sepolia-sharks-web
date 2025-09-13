@@ -29,6 +29,10 @@ main {
   /* border: rgba(0, 0, 0, 1) solid 2px; */
   border-radius: 12px;
   box-shadow: inset 0px 0px 15px 8px black;
+
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .player.away {
@@ -129,7 +133,7 @@ main {
 }
 
 .player .player-name.long {
-  font-size: 1.9rem;
+  font-size: 2rem;
 }
 
 .player.away .player-name {
@@ -140,8 +144,8 @@ main {
 .player .player-number {
   position: absolute;
   transform: translate(-50%, -50%);
-  font-size: 10rem;
-  top: 85%;
+  font-size: 12rem;
+  top: 88%;
   left: 50%;
   color: var(--home-shirt-outline);
   text-shadow: -2px -2px 0 var(--neon-color), 2px -2px 0 var(--neon-color),
