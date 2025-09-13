@@ -157,51 +157,70 @@
 }
 
 .next-match-wrap {
-  display: grid;
-  grid-template-columns: 1fr;
+  position: relative;
+  display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   height: 40rem;
-  align-items: flex-end;
-  padding-top: 7rem;
+  padding: 4rem 0 0 0;
+  margin-top: 4rem;
+  background: linear-gradient(-48deg, rgb(30, 30, 30) 70%, #222 10%);
 }
 
 .next-match-wrap .next-match-title {
-  font-size: 2.3rem;
-  width: 100%;
-  padding-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: calc(2.3rem * 4);
+  height: fit-content;
+
+  padding-bottom: 4rem;
+
+  text-align: center;
+  color: white;
+
+  font-size: 3.9rem;
+  font-family: "Tektur", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  line-height: 2.8rem;
 }
 
-.next-match-wrap img {
-  margin-left: auto;
-  width: 10rem;
+.next-match-wrap .next-match-title > div {
+  color: #222;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 1rem; */
+  /* height: 30px; */
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.4rem;
 }
 
 .next-match-wrap .next-match-details-wrap {
   position: relative;
   display: grid;
+  row-gap: 1rem;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: 1rem 20% 10% 10%;
+  grid-template-rows: 3rem min-content min-content auto;
   justify-content: center;
   align-items: flex-start;
   height: 25rem;
-  width: 100vw;
-  padding: 0 0 0 2rem;
-  margin-bottom: 5rem;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: 250% 100%;
-}
-
-.next-match-wrap .next-match-details-wrap::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), white);
-  z-index: 0;
+
+  background-repeat: no-repeat;
+  background-size: auto 25%;
+  background-position: 90% 100%;
+  z-index: 2;
 }
 
 .next-match-wrap .next-match-details-wrap > div {
@@ -214,36 +233,117 @@
 .next-match-competition {
   grid-column: 1;
   grid-row: 1;
-  font-size: 0.7rem;
-  color: rgb(20, 60, 60);
+
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  font-size: 1rem;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: white;
+
   border-radius: 10px;
   background-color: dodgerblue;
-  color: white;
-  padding: 5px;
-  height: 1rem;
+
+  padding: 0 8px;
+  height: 1.8rem !important;
 }
 
 .next-match-round {
-  grid-column: 2;
-  grid-row: 1;
   font-size: 2rem;
-  padding: 5px;
   padding-left: 0.4rem;
-  font-weight: 800;
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
 }
 
 .next-match-team-name,
 .next-match-date,
-.next-match-place {
+.next-match-place,
+.no-match {
   grid-column: 1 / -1; /* stretch across both columns */
 }
 
+.next-match-date {
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  color: white;
+
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 1.5rem;
+
+  line-height: 1.6rem;
+}
+
+.neon-time {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--neon-color);
+}
+
+.next-match-place {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  justify-self: center;
+
+  width: 70%;
+  font-size: 0.9rem;
+
+  border: none;
+  border-radius: 15px;
+  background-color: #222;
+  color: white;
+
+  padding: 1rem;
+  margin: 2rem;
+
+  cursor: pointer;
+  z-index: 1;
+
+  box-shadow: 0px 0px 7px 0.1px rgba(200, 200, 200, 0.5);
+}
+
+.next-match-place img {
+  display: inline;
+  width: 1.4rem;
+  margin: 0 0.2rem;
+}
+
+.next-match-place > div {
+  margin: 0 auto;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap; /* keep text on one line */
+  text-overflow: ellipsis;
+}
+
 .next-match-team-name {
-  font-size: 1.3rem;
+  padding: 1rem 0 1rem 0;
+  justify-self: center;
+  font-size: 2.2rem;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 600;
+  font-style: normal;
+  color: white;
+  border-top: rgba(50, 50, 50, 0.4) solid 1px;
+}
+
+.no-match {
+  font-size: 1.5rem;
+  color: white;
+  width: 90%;
+  justify-self: center;
+  align-self: center;
 }
 
 /* Slider */

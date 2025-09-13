@@ -31,6 +31,8 @@ fetch("/.netlify/functions/schedule")
   .catch((err) => console.error("Fetch error:", err));
 
 function setNextGame(json) {
+  if (json.error) return setNoGame();
+
   nextMatchDetailsWrap = document.getElementsByClassName(
     "next-match-details-wrap"
   )[0];
@@ -43,11 +45,45 @@ function setNextGame(json) {
   nextMatchDate = document.getElementsByClassName("next-match-date")[0];
   nextMatchPlace = document.getElementsByClassName("next-match-place")[0];
 
+  // Format Date
+  const months = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC",
+  ];
+  const splittedDate = json.date.split("/");
+  const day = splittedDate[0];
+  const month = months[splittedDate[1] - 1];
+  const year = splittedDate[2].substring(0, 4);
+  const time = splittedDate[2]
+    .substring(4, splittedDate[2].length)
+    .replace(":", ".");
+
   // set team image
-  nextMatchDetailsWrap.style.backgroundImage = "url(" + json.teamImage + ")";
-  nextMatchCompetition.innerText = json.competition;
+  // nextMatchDetailsWrap.style.backgroundImage = `url(${json.teamImage})`;
+  nextMatchCompetition.innerHTML = `<span>${json.competition}</span>`;
   nextMatchRound.innerText = "Game " + json.round;
   nextMatchTeam.innerText = json.teamName;
-  nextMatchDate.innerText = json.date;
-  nextMatchPlace.innerText = json.place;
+  nextMatchDate.innerHTML = `${month} ${day}, ${year} <span class='neon-time'>${time}</span>`;
+  nextMatchPlace.innerHTML = `<img src="img/auxilary/navigate.png" /><div>${json.place}</div>`;
+  nextMatchPlace.onclick = () => {
+    window.open(`https://www.google.com/maps/search/${json.place}`, "_blank");
+  };
+}
+
+function setNoGame() {
+  nextMatchDetailsWrap = document.getElementsByClassName(
+    "next-match-details-wrap"
+  )[0];
+
+  nextMatchDetailsWrap.innerHTML = `<div class="no-match">Δεν υπάρχουν πληροφορίες για το επόμενο παιχνίδι...</div>`;
 }

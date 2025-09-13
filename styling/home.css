@@ -91,43 +91,32 @@
   width: 2.2rem;
 }
 
-.next-match-wrap {
-  grid-template-columns: 1fr 1fr; /* two equal columns */
-  grid-template-rows: auto auto; /* two rows */
-  gap: 1rem; /* optional spacing */
-  height: 40rem;
-  align-items: flex-end;
-  padding-top: 5rem;
-  padding-left: 15rem;
-}
-
-.next-match-wrap .next-match-title {
-  grid-column: 1 / span 2;
-  font-size: 3rem;
-}
-
-.next-match-wrap img {
-  margin-left: auto;
-  width: 50rem;
-}
-
 .next-match-wrap .next-match-details-wrap {
-  padding: 0 0 0 15rem;
   background-size: auto 100%;
-  background-position: 45% 100%;
+  background-position: 80% 80%;
   overflow: visible;
-}
-
-.next-match-wrap .next-match-details-wrap::before {
-  background: linear-gradient(to right, transparent, transparent, white 60%);
+  background-repeat: no-repeat;
 }
 
 .next-match-round {
   font-size: 3rem;
 }
 
+.next-match-competition {
+  margin-left: 10rem !important;
+}
+
+.next-match-place {
+  width: 30%;
+  font-size: 1.2rem;
+}
+
+.next-match-place img {
+  width: 1.7rem;
+}
+
 .next-match-team-name {
-  font-size: 1.7rem;
+  font-size: 2.7rem;
 }
 
 /* Slider */
