@@ -54,7 +54,7 @@
   justify-content: flex-start;
 }
 
-.meet-zaharias-wrap img {
+.meet-zaharias-wrap > img {
   width: 28%;
   margin-left: 5rem;
 }
@@ -78,15 +78,17 @@
 }
 
 .zaharias-social-btn-wrap > a {
-  padding: 12px 18px;
   margin-top: 2rem;
   font-size: 1.2rem;
-  margin: 0rem 0.3rem 0 0;
 }
 
 .zaharias-social-btn-wrap > a:hover {
   box-shadow: 0px 0px 1px 0px black;
   transition-duration: 0.5s;
+}
+
+.zaharias-social-btn-wrap > a > img {
+  width: 2.2rem;
 }
 
 .next-match-wrap {
@@ -126,4 +128,132 @@
 
 .next-match-team-name {
   font-size: 1.7rem;
+}
+
+/* Slider */
+.sponsor-slider.swiffy-slider {
+  width: 80vw;
+  height: 76vh;
+  margin: 5rem auto;
+}
+
+.sponsor-slider .slider-nav {
+  z-index: 3;
+}
+
+.sponsor-slider .slide-body {
+  z-index: 2;
+}
+
+.swiffy-slider.sponsor-slider
+  .slider-container
+  li
+  .slide-body
+  button.cta-slide-btn {
+  padding: 17px;
+}
+
+.sponsor-slider .slide-body button.cta-slide-btn img {
+  width: 1.7rem;
+}
+
+.sponsor-slider .nebo-slide .slide-body {
+  font-size: 1.3rem;
+  padding: 0rem 0 0 15rem;
+  width: 50%;
+}
+
+.sponsor-slider .nebo-slide .slide-body > p > span {
+  font-size: 2.2rem;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.nebo-slide
+  .nebo-slider-logo {
+  width: 15rem;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.nebo-slide::before {
+  background: linear-gradient(to right, #879c95 30%, #879c95, transparent);
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.nebo-slide {
+  background-position-x: 100%;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.ab-slide img {
+  height: 100%;
+  width: auto;
+  margin: auto;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.mini-van-taxi-slide {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.mini-van-taxi-slide
+  .slide-body {
+  padding: 2rem 3rem;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.mini-van-taxi-slide
+  .slide-body
+  > img {
+  width: 22rem;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.mini-van-taxi-slide video {
+  width: auto;
+  height: 100%;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.sayprint-slide {
+  justify-content: center;
+  box-shadow: inset 150px 0 150px -8px rgba(0, 0, 0, 0.5),
+    /* left side */ inset -150px 0 150px -8px rgba(0, 0, 0, 0.5); /* right side */
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.sayprint-slide .slide-body {
+  /* margin-left: 2rem; */
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: center;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.sayprint-slide
+  .slide-body
+  > img {
+  width: 35rem;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.sayprint-slide
+  .slide-body
+  > span {
+  font-size: 5rem;
+  margin: 1rem 0 4rem 4rem;
+}
+
+@keyframes nebo-logo-flow {
+  0% {
+    width: 27rem;
+  }
+  100% {
+    width: 32rem;
+  }
 }

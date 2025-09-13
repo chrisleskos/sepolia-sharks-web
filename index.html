@@ -11,6 +11,13 @@
     <link rel="manifest" href="/site.webmanifest" />
     <!-- Uses android-chrome icons -->
 
+    <!-- Slider -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
     <link
       rel="stylesheet"
       type="text/css"
@@ -89,6 +96,12 @@
       href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Rubik+Mono+One&display=swap"
       rel="stylesheet"
     />
+
+    <script
+      src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
   <body>
     <nav>
@@ -98,7 +111,7 @@
       >
         &equiv;
       </div>
-      <a href="" class="nav-logo nav-sharks-logo">
+      <a href="/" class="nav-logo nav-sharks-logo">
         <img src="img/sharks/shark3.png" />
       </a>
       <!-- <div class="nav-x-sign">&times;</div> -->
@@ -187,7 +200,9 @@
           </div>
           <div class="cta-menu-vertical-line"></div>
           <div class="cta-wrap cta-zaharias-wrap">
-            <div class="cta-title cta-zaharias-title">Γνώρισε τον Ζαχαρία</div>
+            <div class="cta-title cta-zaharias-title">
+              Ανακάλυψε τον Ζαχαρία
+            </div>
             <div class="cta-text cta-zaharias-text">
               Έχουμε και μασκότ! Μπορεί πολλές φορές να ξεφεύγει από τους
               τρόπους ευγενείας, αλλά αυτός είναι ο ρόλος του.
@@ -198,6 +213,104 @@
           </div>
         </div>
       </div>
+      <!-- Sponsor Banner Slider -->
+      <div
+        class="sponsor-slider swiffy-slider slider-item-helper"
+        id="sponsor-slider"
+        data-slider-nav-autoplay
+        data-slider-nav-loop
+        data-slider-nav-autoplay-interval="3000"
+      >
+        <ul class="slider-container">
+          <li class="nebo-slide">
+            <div class="slide-body">
+              <img
+                src="img/sponsors/nebo_black.png"
+                class="nebo-slider-opacity-logo"
+              />
+              <img src="img/sponsors/nebo_black.png" class="nebo-slider-logo" />
+              <p>
+                <span>Tinos 📍</span>
+                <br /><br />
+                Brunch / Specialty coffee, cocktails & wine<br />
+                Your all day heaven in Tinos
+              </p>
+              <div>
+                <button
+                  class="cta-slide-btn ig-slide-btn"
+                  onclick='window.location.href="https://www.instagram.com/nebo.tinos/?hl=el"'
+                >
+                  <img src="img/contact/insta-white.png" alt="" />
+                </button>
+                <button
+                  class="cta-slide-btn tiktok-slide-btn"
+                  onclick='window.location.href="https://www.tiktok.com/@nebo.tinos"'
+                >
+                  <img src="img/contact/tiktok-white.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="mini-van-taxi-slide">
+            <div class="slide-body">
+              <img src="img/sponsors/MiniVanTaxi LOGO.jpg" />
+              <div>
+                <button
+                  class="cta-slide-btn ig-slide-btn"
+                  onclick='window.location.href="https://www.instagram.com/mini_van_taxi/?hl=en"'
+                >
+                  <img src="img/contact/insta-white.png" alt="" />
+                </button>
+                <button
+                  class="cta-slide-btn web-slide-btn"
+                  onclick='window.location.href="https://minivantaxi.gr/"'
+                >
+                  <img src="img/contact/website.png" alt="" />
+                </button>
+              </div>
+            </div>
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              src="//minivantaxi.gr/wp-content/uploads/2025/05/video.mp4"
+              type="video/mp4"
+            ></video>
+          </li>
+          <li class="sayprint-slide">
+            <div class="slide-body">
+              <img src="img/sponsors/sayprintlogo.png" />
+              <span>
+                YOU SAY IT<br />
+                WE PRINT IT
+              </span>
+              <button
+                class="cta-slide-btn web-slide-btn"
+                onclick='window.location.href="https://www.sayprint.gr/main-home/"'
+              >
+                <img src="img/contact/website.png" alt="" />
+              </button>
+            </div>
+          </li>
+          <li class="ab-slide">
+            <img src="img/sponsors/abxsharks.png" />
+          </li>
+        </ul>
+
+        <!-- navigation arrows -->
+        <button type="button" class="slider-nav"></button>
+        <button type="button" class="slider-nav slider-nav-next"></button>
+
+        <!-- optional bullets -->
+        <div class="slider-indicators">
+          <button class="active"></button>
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+      </div>
+
       <div class="meet-zaharias-wrap" id="zaharias">
         <img src="img/zaharias/happy.png" alt="" />
         <div class="meet-zaharias-text">
@@ -211,13 +324,13 @@
               href="https://www.instagram.com/zaharias.shark/"
               class="zaharias-ig-btn"
             >
-              @zaharias.shark
+              <img src="img/contact/insta-white.png" alt="" />
             </a>
             <a
               href="https://www.tiktok.com/@zaxarias_shark"
               class="zaharias-tiktok-btn"
             >
-              @zaxarias_shark
+              <img src="img/contact/tiktok-white.png" alt="" />
             </a>
           </div>
         </div>
@@ -230,7 +343,6 @@
           <div class="next-match-team-name"></div>
           <div class="next-match-date"></div>
           <div class="next-match-place"></div>
-          <!-- <div class="next-match-team-logo"></div> -->
         </div>
         <!-- <img src="img/auxilary/ball.jpg" /> -->
       </div>
@@ -245,6 +357,30 @@
         </a>
       </div>
     </footer>
+    <!-- Swiffy JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
+      defer
+    ></script>
+    <script>
+      // Safe init after load
+      window.addEventListener("load", () => {
+        // Initialize all sliders
+        if (window.swiffyslider && typeof swiffyslider.init === "function") {
+          swiffyslider.init();
+        }
+
+        // Optional manual fallback: ensure autoplay is running
+        const slider = document.getElementById("sponsor-slider");
+        // timeout 2000ms, autopause enabled (true)
+        if (
+          window.swiffyslider &&
+          typeof swiffyslider.autoPlay === "function"
+        ) {
+          // swiffyslider.autoPlay(slider, 7000, true);
+        }
+      });
+    </script>
     <script src="home.js"></script>
   </body>
 </html>

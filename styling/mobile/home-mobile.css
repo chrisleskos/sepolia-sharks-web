@@ -1,3 +1,7 @@
+.no-text-shadow {
+  text-shadow: none;
+}
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -83,7 +87,7 @@
   margin-top: 5rem;
 }
 
-.meet-zaharias-wrap img {
+.meet-zaharias-wrap > img {
   width: 70%;
   margin-left: -4rem;
 }
@@ -113,26 +117,28 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-direction: column;
+  /* flex-direction: column; */
   margin-top: 1rem;
 }
 
 .zaharias-social-btn-wrap > a {
   display: block;
   width: fit-content;
-  padding: 12px 18px;
+  padding: 12px;
   text-decoration: none;
   color: white;
   border-radius: 15px;
-  margin: 0.3rem 0 0 0;
+  margin: 0rem 0.3rem 0 0;
   font-family: "Epunda Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
   cursor: pointer;
   box-shadow: 0px 0px 3.5px 0px black;
+}
+
+.zaharias-social-btn-wrap > a > img {
+  width: 1.5rem;
 }
 
 .zaharias-ig-btn {
@@ -147,7 +153,7 @@
 }
 
 .zaharias-tiktok-btn {
-  background: black;
+  background-color: rgb(40, 40, 40);
 }
 
 .next-match-wrap {
@@ -238,4 +244,259 @@
 .next-match-team-name {
   font-size: 1.3rem;
   font-weight: 600;
+}
+
+/* Slider */
+.sponsor-slider.swiffy-slider {
+  width: 98vw;
+  height: 76vh;
+  margin: 5rem auto;
+}
+
+.sponsor-slider .slider-nav {
+  z-index: 3;
+}
+
+.sponsor-slider .slide-body {
+  z-index: 2;
+}
+
+.swiffy-slider.sponsor-slider
+  .slider-container
+  li
+  .slide-body
+  button.cta-slide-btn {
+  position: relative;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: normal;
+  border: none;
+  border-radius: 30%;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 0.2rem;
+
+  box-shadow: 0px 0px 3.5px 0px rgb(190, 190, 190);
+}
+
+.sponsor-slider .slide-body button.cta-slide-btn img {
+  width: 1.5rem;
+}
+
+.sponsor-slider .slide-body button.ig-slide-btn {
+  background: linear-gradient(
+    to top right,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+  color: white;
+}
+
+.sponsor-slider .slide-body button.web-slide-btn {
+  background-color: rgb(150, 200, 250);
+}
+
+.sponsor-slider .slide-body button.tiktok-slide-btn {
+  background-color: rgb(40, 40, 40);
+}
+
+.sponsor-slider .nebo-slide .slide-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  padding: 0rem 0 0 2rem;
+  width: 80%;
+
+  z-index: 2;
+}
+
+.sponsor-slider .nebo-slide .slide-body > p {
+  margin-left: 0.5rem;
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.sponsor-slider .nebo-slide .slide-body > p > span {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  padding-left: 0.5rem;
+}
+
+.sponsor-slider .nebo-slide .slide-body button {
+  margin-top: 5rem;
+  margin-right: auto;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.nebo-slide
+  .nebo-slider-opacity-logo {
+  position: absolute;
+  width: 27rem;
+  top: -5rem;
+  left: -4rem;
+  z-index: 1;
+  opacity: 0.08;
+  animation: nebo-logo-flow 7s linear 0s forwards;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.nebo-slide
+  .nebo-slider-logo {
+  display: inline;
+  width: 13rem;
+  margin-right: auto !important;
+}
+
+.sponsor-slider.swiffy-slider .slider-container > li {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.nebo-slide::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #879c95, #879c95, transparent);
+  z-index: 1;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.nebo-slide {
+  background: url(../../img/slider/nebo.png);
+  background-size: auto 100%;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.ab-slide {
+  background-color: #131212;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.ab-slide img {
+  width: 100%;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.mini-van-taxi-slide {
+  background-color: #000;
+  flex-direction: column;
+  margin-top: auto;
+  justify-content: flex-start;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.mini-van-taxi-slide
+  .slide-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.mini-van-taxi-slide
+  .slide-body
+  > img {
+  width: 50%;
+}
+
+.sponsor-slider.swiffy-slider .slider-container li.mini-van-taxi-slide video {
+  width: 100%;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.mini-van-taxi-slide
+  .cta-slide-btn {
+  background: rgb(40, 40, 40);
+}
+
+.sponsor-slider li.sayprint-slide {
+  box-shadow: inset 25px 0 45px -8px rgba(0, 0, 0, 0.5),
+    /* left side */ inset -15px 0 45px -8px rgba(0, 0, 0, 0.5); /* right side */
+}
+
+.sponsor-slider li.sayprint-slide::before {
+  content: "";
+  position: absolute;
+  top: 73%;
+  display: block;
+  width: 110%;
+  height: 7px;
+  background-color: #000;
+  opacity: 0.05;
+  border-radius: 50%;
+  box-shadow: 1px 1px 15px 10px black;
+}
+
+.sponsor-slider li.sayprint-slide .slide-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.sayprint-slide
+  .slide-body
+  > img {
+  width: 90%;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.sayprint-slide
+  .slide-body
+  > span {
+  font-size: 3rem;
+  margin: 1rem 0 4rem 1.5rem;
+  color: #444;
+
+  font-family: "Epunda Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.sponsor-slider.swiffy-slider
+  .slider-container
+  li.sayprint-slide
+  .slide-body
+  > button {
+  margin: 0 auto;
+}
+
+@keyframes nebo-logo-flow {
+  0% {
+    width: 17rem;
+  }
+  100% {
+    width: 20rem;
+  }
 }

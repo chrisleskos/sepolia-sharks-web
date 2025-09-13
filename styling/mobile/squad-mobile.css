@@ -55,7 +55,7 @@ main {
 }
 
 .player.away .shirt-neck {
-  border: solid 1px black;
+  border: solid 2px var(--neon-color);
   outline: 7px solid var(--away-shirt-outline);
 }
 
@@ -88,7 +88,7 @@ main {
 
 .player.away .left-arm,
 .player.away .right-arm {
-  border: solid 1px black;
+  border: solid 2px var(--neon-color);
   outline: 7px solid var(--away-shirt-outline);
 }
 
