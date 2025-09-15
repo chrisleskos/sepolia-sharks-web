@@ -167,7 +167,23 @@
         </div>
         <span>Away</span>
       </div>
-      <div class="squad-grid">
+      <div class="sort-wrapper">
+        <select id="player-sort-select">
+          <button>
+            <span>&#8645;</span>
+            <selectedcontent></selectedcontent>
+          </button>
+          <option value="number">
+            <div class="icon" aria-hidden="true">34</div>
+            <span class="option-label">Number</span>
+          </option>
+          <option value="position">
+            <span class="icon" aria-hidden="true">PG</span
+            ><span class="option-label">Position</span>
+          </option>
+        </select>
+      </div>
+      <div class="squad-grid" id="players">
         <div class="player">
           <div class="shirt-neck"></div>
           <div class="left-block"></div>
@@ -176,6 +192,7 @@
           <div class="right-arm"></div>
           <img src="img/sponsors/ab.png" alt="" class="ab-player-logo" />
           <div class="player-position">PG</div>
+
           <div class="player-name">ΧΟΥΣΟΣ</div>
           <div class="player-number">4</div>
         </div>
@@ -323,6 +340,7 @@
         </a>
       </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="squad.js"></script>
   </body>
 </html>

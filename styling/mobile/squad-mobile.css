@@ -184,7 +184,7 @@ main {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  margin: 5rem 0;
+  margin: 5rem 0 3rem 0;
 }
 
 .kit-toggle {
@@ -252,4 +252,118 @@ main {
 
 .ab-x-sharks-banner img {
   height: 100%;
+}
+
+/* Sorting select */
+
+.sort-wrapper {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+  width: 11.5rem;
+  cursor: pointer;
+}
+
+select {
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+  margin: 0 auto;
+}
+
+select:hover,
+select:focus {
+  background: #dddddd;
+}
+
+select::picker-icon {
+  color: #999999;
+  transition: 0.4s rotate;
+  display: none;
+}
+
+select:open::picker-icon {
+  rotate: 180deg;
+}
+
+::picker(select) {
+  border: none;
+}
+
+option {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+option:first-of-type {
+  border-radius: 8px 8px 0 0;
+}
+
+option:last-of-type {
+  border-radius: 0 0 8px 8px;
+}
+
+option:not(option:last-of-type) {
+  border-bottom: none;
+}
+
+option:nth-of-type(odd) {
+  background: white;
+}
+
+option:hover,
+option:focus {
+  background: #dddddd;
+}
+
+option .icon {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0d243f;
+  width: 3rem;
+  text-box: trim-both cap alphabetic;
+}
+
+selectedcontent .icon {
+  display: none;
+}
+
+selectedcontent {
+  width: 100%;
+  text-align: center;
+}
+
+option:checked {
+  font-weight: bold;
+}
+
+option::checkmark {
+  order: 1;
+  margin-left: auto;
+  content: "🏀";
+}
+
+::picker(select) {
+  opacity: 0;
+  transition: all 0.4s allow-discrete;
+}
+
+::picker(select):popover-open {
+  opacity: 1;
+}
+
+select > button > span {
+  padding-right: 1rem;
+  border-right: 2px solid rgba(200, 200, 200, 0.6);
 }

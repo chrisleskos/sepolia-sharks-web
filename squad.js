@@ -1,7 +1,12 @@
+const allPlayers = document.querySelectorAll(".player");
+
 toggleButton = document.getElementById("kitToggle");
 toggleButtonImg = document.querySelectorAll(".kit-toggle > img")[0];
 players = document.querySelectorAll(".player");
 toggleStatus = "home";
+
+playerSortSelect = document.getElementById("player-sort-select");
+playersContainer = document.getElementById("players");
 
 toggleButton.onclick = () => {
   if (toggleStatus === "home") {
@@ -18,6 +23,10 @@ toggleButton.onclick = () => {
     });
   }
 };
+
+playerSortSelect.addEventListener("change", (event) => {
+  sortPlayers(event.target.value);
+});
 
 zahariasWrap = document.getElementById("zaharias");
 
@@ -36,4 +45,43 @@ function toggleZaharias() {
   } else {
     zahariasWrap.style.display = "none";
   }
+}
+
+function sortPlayers(sortBy) {
+  sortedPlayersList = [];
+  tempPlayersSet = new Set(allPlayers);
+
+  if (sortBy === "number") {
+    sortedPlayersList = tempPlayersSet;
+  } else if (sortBy === "position") {
+    console.log("Im in again");
+    const positions = [
+      "PG",
+      "PG/SG",
+      "SG",
+      "SG/SF",
+      "SF",
+      "SF/PF",
+      "PF",
+      "PF/C",
+      "C",
+    ];
+    positions.forEach((pos) => {
+      tempPlayersSet.forEach((player) => {
+        playerPosition = $(player)
+          .find("div.player-position")
+          .eq(0)
+          .text()
+          .trim();
+
+        if (playerPosition.replace(/\s+/g, "") === pos) {
+          sortedPlayersList.push(player);
+          tempPlayersSet.delete(player);
+        }
+      });
+    });
+  }
+  sortedPlayersList.forEach((player) => {
+    playersContainer.appendChild(player);
+  });
 }
