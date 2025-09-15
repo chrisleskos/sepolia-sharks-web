@@ -263,9 +263,16 @@ main {
 }
 
 select,
-::picker(select),
-#smartphone-sort-select {
+::picker(select) {
   appearance: base-select;
+  width: 11.5rem;
+  cursor: pointer;
+  font-family: "Tektur", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#smartphone-sort-select {
   width: 11.5rem;
   cursor: pointer;
   font-family: "Tektur", sans-serif;
@@ -354,12 +361,12 @@ option .icon {
 }
 
 selectedcontent .icon,
-#smartphone-sort-select selectedcontent .icon {
+#smartphone-sort-select .selected-content .icon {
   display: none;
 }
 
 selectedcontent,
-#smartphone-sort-select selectedcontent {
+#smartphone-sort-select .selected-content {
   width: 100%;
   text-align: center;
 }
@@ -410,6 +417,6 @@ select > button > span,
   /* text-box: trim-both cap alphabetic; */
 }
 
-#smartphone-sort-select > selectedcontent {
+#smartphone-sort-select > .selected-content {
   flex-grow: 1;
 }
