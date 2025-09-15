@@ -37,6 +37,7 @@ main {
 
 .player.away {
   background: url(../../img/shirts/black.png);
+  box-shadow: inset 0px 0px 15px 18px rgb(50, 50, 50);
 }
 
 .player .shirt-neck,
