@@ -258,17 +258,33 @@ main {
 
 .sort-wrapper {
   display: flex;
+  position: relative;
   margin-bottom: 4rem;
 }
 
 select,
-::picker(select) {
+::picker(select),
+#smartphone-sort-select {
   appearance: base-select;
   width: 11.5rem;
   cursor: pointer;
+  font-family: "Tektur", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 select {
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+}
+
+select .icon {
+  display: none;
+}
+
+select,
+#smartphone-sort-select {
   border: 2px solid #dddddd;
   background: #eeeeee;
   padding: 10px;
@@ -277,7 +293,9 @@ select {
 }
 
 select:hover,
-select:focus {
+select:focus,
+#smartphone-sort-select:hover,
+#smartphone-sort-select:focus {
   background: #dddddd;
 }
 
@@ -335,11 +353,13 @@ option .icon {
   text-box: trim-both cap alphabetic;
 }
 
-selectedcontent .icon {
+selectedcontent .icon,
+#smartphone-sort-select selectedcontent .icon {
   display: none;
 }
 
-selectedcontent {
+selectedcontent,
+#smartphone-sort-select selectedcontent {
   width: 100%;
   text-align: center;
 }
@@ -363,7 +383,33 @@ option::checkmark {
   opacity: 1;
 }
 
-select > button > span {
+select > button > span,
+#smartphone-sort-select > span {
   padding-right: 1rem;
   border-right: 2px solid rgba(200, 200, 200, 0.6);
+  white-space: normal;
+}
+
+#smartphone-sort-select {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+#smartphone-sort-select > span {
+  font-size: 1rem;
+  line-height: 1rem; /* match font size to kill extra ascent/descent */
+  vertical-align: middle;
+  /* text-box: trim-both cap alphabetic; */
+}
+
+#smartphone-sort-select > selectedcontent {
+  flex-grow: 1;
 }

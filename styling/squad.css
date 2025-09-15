@@ -21,3 +21,7 @@
 .text-bubble .zaharias-text {
   font-size: 1.3rem;
 }
+
+select .icon {
+  display: initial;
+}

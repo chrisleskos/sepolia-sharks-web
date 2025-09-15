@@ -7,6 +7,7 @@ toggleStatus = "home";
 
 playerSortSelect = document.getElementById("player-sort-select");
 playersContainer = document.getElementById("players");
+customAndroidSelectBtn = document.getElementById("smartphone-sort-select");
 
 toggleButton.onclick = () => {
   if (toggleStatus === "home") {
@@ -25,6 +26,7 @@ toggleButton.onclick = () => {
 };
 
 playerSortSelect.addEventListener("change", (event) => {
+  setAndroidSelectBtnText();
   sortPlayers(event.target.value);
 });
 
@@ -83,4 +85,13 @@ function sortPlayers(sortBy) {
   sortedPlayersList.forEach((player) => {
     playersContainer.appendChild(player);
   });
+}
+
+function setAndroidSelectBtnText() {
+  androidSelectedContent =
+    customAndroidSelectBtn.getElementsByTagName("selectedcontent")[0];
+
+  androidSelectedContent.innerText =
+    playerSortSelect.value[0].toUpperCase() +
+    playerSortSelect.value.substring(1);
 }
