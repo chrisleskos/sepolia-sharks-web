@@ -54,7 +54,6 @@ function sortPlayers(sortBy) {
   if (sortBy === "number") {
     sortedPlayersList = tempPlayersSet;
   } else if (sortBy === "position") {
-    console.log("Im in again");
     const positions = [
       "PG",
       "PG/SG",
