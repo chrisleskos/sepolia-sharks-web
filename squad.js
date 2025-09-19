@@ -30,7 +30,7 @@ playerSortSelect.addEventListener("change", (event) => {
   sortPlayers(event.target.value);
 });
 
-zahariasWrap = document.getElementById("zaharias");
+let zahariasWrap = document.getElementById("zaharias");
 
 setTimeout(() => {
   zahariasWrap.style.display = "block";
@@ -40,6 +40,18 @@ setTimeout(() => {
     zahariasWrap.style.display = "none";
   }, 7000);
 }, 2000);
+
+// change lighting position
+// get main and change the variable since psudo element can't be targeted
+let lightning = document.getElementsByTagName("main")[0];
+let positions = ["-50%", "0%", "-10%", "-100%", "40%", "70%"];
+let p = -1;
+setInterval(() => {
+  p = ++p % positions.length;
+  console.log(p);
+  let lightning_position = positions[p];
+  lightning.style.setProperty("--lightning-position", lightning_position);
+}, 7000);
 
 function toggleZaharias() {
   if (zahariasWrap.style.display === "none") {
