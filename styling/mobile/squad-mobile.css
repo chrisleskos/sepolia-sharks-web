@@ -8,21 +8,25 @@ main {
 .squad-grid {
   width: 80vw;
   margin: auto;
+  margin-bottom: 3rem;
   display: grid;
-  gap: 3rem; /* spacing between items */
+  gap: var(--grid-gap); /* spacing between items */
   grid-template-columns: 1fr;
-  justify-items: center;
+  justify-content: center; /* <-- center the whole grid */
+  justify-items: center; /* <-- center items inside each cell */
   align-items: center;
 
   --home-shirt-background: url(../../img/shirts/green.png);
   --home-shirt-outline: var(--background-blue);
   --away-shirt-background: url(../../img/shirts/black.png);
   --away-shirt-outline: white;
+  --player-size: 340px;
+  --grid-gap: 3rem;
 }
 
 .squad-grid .player {
-  width: 300px;
-  height: 300px;
+  width: var(--player-size);
+  height: var(--player-size);
   background: var(--home-shirt-background);
   justify-content: center;
   position: relative;
@@ -34,6 +38,8 @@ main {
   font-family: "Teko", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+
+  cursor: pointer;
 }
 
 .player.away {
@@ -111,7 +117,7 @@ main {
   font-weight: 600;
   font-style: normal;
   text-align: center;
-  z-index: 3;
+  z-index: 5;
   background-color: #e47041;
   color: white;
   padding: 5px;
@@ -162,10 +168,85 @@ main {
 .ab-player-logo {
   position: absolute;
   transform: translate(-50%, 0);
-  left: 50%;
-  top: 10px;
-  height: 2.5rem;
+  left: 90%;
+  top: 1px;
+  height: 2.45rem;
   z-index: 5;
+}
+
+.player .player-view {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5.5px;
+  --player-view-index-size: 6px;
+}
+
+.player .player-view::before,
+.player .player-view::after {
+  content: "";
+  display: block;
+  width: var(--player-view-index-size);
+  height: var(--player-view-index-size);
+  border-radius: 50px;
+  margin: 0 0.3rem;
+  background-color: rgb(140, 140, 140);
+  border: 1.5px rgba(40, 40, 40, 0.3) solid;
+  z-index: 5;
+}
+
+.player:not(.details) .player-view::before {
+  background-color: var(--neon-color);
+}
+
+.player.details .player-view::after {
+  background-color: var(--neon-color);
+}
+
+.player .player-details {
+  display: none;
+  justify-content: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
+  z-index: 4;
+  background-color: rgba(70, 70, 70, 0.98);
+}
+
+.player.details .player-details {
+  display: block;
+}
+
+.player .player-details img {
+  position: absolute;
+  left: -70px;
+  top: 89px;
+  height: 16rem;
+}
+
+.player .player-details .details-content {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  display: flex;
+
+  width: fit-content;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.player .player-details .details-content .name {
+  column-span: 2;
+}
+
+.player .player-details .details-content .name > span {
+  margin: 0 8px;
+  color: var(--neon-color);
 }
 
 .squad-title {

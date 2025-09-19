@@ -1,5 +1,8 @@
 .squad-grid {
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-columns: repeat(
+    auto-fill,
+    calc(var(--player-size) + var(--grid-gap))
+  );
 }
 
 .squad-title {
