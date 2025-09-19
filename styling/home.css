@@ -176,6 +176,10 @@
   width: auto;
 }
 
+.sponsor-slider.swiffy-slider .slider-container li.ab-slide::after {
+  background-size: auto 105%;
+}
+
 .sponsor-slider.swiffy-slider .slider-container li.mini-van-taxi-slide {
   flex-direction: row;
   justify-content: flex-start;
