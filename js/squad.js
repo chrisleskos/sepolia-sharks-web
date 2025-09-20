@@ -121,7 +121,7 @@ function fillPlayerGrid() {
         <div class="details-content">
           <table>
             <tr>
-              <td class="name">
+              <td class="name" colspan="2">
                 ${pl.fullName[0]}. ${" "} ${pl.fullName.split(" ")[1]}
                 <span>#${pl.number}</span>
               </td>

@@ -215,7 +215,7 @@ main {
   height: 100%;
   padding: 2rem 0;
   z-index: 4;
-  background-color: rgba(70, 70, 70, 0.98);
+  background-color: rgba(60, 60, 60, 0.98);
 }
 
 .player.details .player-details {
@@ -241,12 +241,26 @@ main {
 }
 
 .player .player-details .details-content .name {
-  column-span: 2;
+  column-span: all;
 }
 
 .player .player-details .details-content .name > span {
   margin: 0 8px;
   color: var(--neon-color);
+}
+
+.player table tr:not(:first-child) td:first-child {
+  color: rgb(200, 200, 200);
+  width: 5rem;
+  text-align: left;
+}
+
+.player table tr:first-child td {
+  width: 11rem;
+}
+
+.player table tr td:nth-child(2) {
+  width: 5rem;
 }
 
 .squad-title {

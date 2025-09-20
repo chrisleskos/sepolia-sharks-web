@@ -25,7 +25,7 @@ export const playersJson = {
       position: "SG / SF",
       height: "178",
       weight: "92",
-      images: [],
+      images: ["pyrro-front.png"],
     },
     {
       fullName: "Γιάννης Μπαρτζώκας",
@@ -34,7 +34,7 @@ export const playersJson = {
       position: "SG",
       height: "174",
       weight: "68",
-      images: [],
+      images: ["bartzo-front.png"],
     },
     {
       fullName: "Θοδωρής Μακαρίτης",
@@ -61,7 +61,7 @@ export const playersJson = {
       position: "PF / C",
       height: "177",
       weight: "78",
-      images: [],
+      images: ["dsele-front.png"],
     },
     {
       fullName: "Γιάννης Καντιώτης",
@@ -70,7 +70,7 @@ export const playersJson = {
       position: "PG",
       height: "177",
       weight: "80",
-      images: [],
+      images: ["kant-front.png"],
     },
     {
       fullName: "Γιάννης Πατσίδης",
@@ -88,7 +88,7 @@ export const playersJson = {
       position: "SF / PF",
       height: "182",
       weight: "79",
-      images: [],
+      images: ["miltos-front.png"],
     },
     {
       fullName: "Σταμάτης Σελεμενάκης",
@@ -106,7 +106,7 @@ export const playersJson = {
       position: "PF",
       height: "179",
       weight: "80",
-      images: [],
+      images: ["duke-front.png"],
     },
     {
       fullName: "Γιάννης Σόβολος",
@@ -115,7 +115,7 @@ export const playersJson = {
       position: "PF / C",
       height: "183",
       weight: "97",
-      images: [],
+      images: ["sov-front.png"],
     },
     {
       fullName: "Γιάννης Ντεγιάννης",
@@ -124,7 +124,7 @@ export const playersJson = {
       position: "SF / PF",
       height: "180",
       weight: "93",
-      images: [],
+      images: ["dejohn-front.png"],
     },
   ],
 };

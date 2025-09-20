@@ -74,6 +74,10 @@ nav .nav-logo img {
   margin: 0 1rem;
 }
 
+.nav-league-logo {
+  margin-right: 1rem;
+}
+
 nav .nav-social {
   display: flex;
   align-items: center;
