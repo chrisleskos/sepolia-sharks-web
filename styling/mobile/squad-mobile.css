@@ -216,6 +216,7 @@ main {
   padding: 2rem 0;
   z-index: 4;
   background-color: rgba(60, 60, 60, 0.98);
+  background: linear-gradient(-48deg, rgba(30, 30, 30, 1) 40%, #222 10%);
 }
 
 .player.details .player-details {

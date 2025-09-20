@@ -16,7 +16,7 @@ export const playersJson = {
       position: "PF / C",
       height: "182",
       weight: "79",
-      images: [],
+      images: ["lsk-front.png"],
     },
     {
       fullName: "Πύρρος Μητρούση",

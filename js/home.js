@@ -114,11 +114,17 @@ function setNextGame(json) {
 }
 
 function setNoGame() {
-  nextMatchDetailsWrap = document.getElementsByClassName(
+  let nextMatchDetailsWrap = document.getElementsByClassName(
     "next-match-details-wrap"
   )[0];
 
+  let ctaNextMatch = document.getElementsByClassName(
+    "cta-text cta-next-match-text"
+  )[0];
+
   nextMatchDetailsWrap.innerHTML = `<div class="no-match">Δεν υπάρχουν πληροφορίες για το επόμενο παιχνίδι...</div>`;
+  ctaNextMatch.innerHTML =
+    "Δεν υπάρχουν πληροφορίες για το επόμενο παιχνίδι...";
 }
 
 function zellerDayOfWeek(year, month, day, lang = "EN") {
