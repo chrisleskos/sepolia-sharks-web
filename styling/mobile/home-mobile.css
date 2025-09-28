@@ -2,84 +2,6 @@
   text-shadow: none;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.intro .intro-title {
-  font-size: 2rem;
-  color: black;
-  text-align: center;
-  font-family: "Ephesis", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.intro .call-to-action-menu {
-  display: flex;
-  flex-direction: column;
-  width: 98%;
-  height: 95%;
-  border-radius: 25px;
-  overflow: hidden;
-  background: url(../../img/auxilary/basketball-pile-3-vert.png);
-  background-size: 100%;
-  align-items: flex-start;
-  justify-content: space-around;
-  color: rgb(255, 247, 233);
-
-  font-family: "Epunda Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.cta-menu-vertical-line {
-  height: 1px;
-  width: 40%;
-  border-radius: 25px;
-  background-color: rgb(255, 247, 233);
-  margin: auto;
-}
-
-.cta-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 10px;
-  width: auto;
-  height: 25%;
-}
-
-.cta-title {
-  margin: 3rem 0 1rem 0;
-  font-size: 1.7rem;
-  font-weight: 600;
-}
-
-.cta-text {
-  height: 80%;
-}
-
-.cta-btn {
-  display: inline;
-  width: fit-content;
-  margin: 2rem 0;
-  cursor: pointer;
-
-  padding: 7px 12px;
-  background-color: white;
-  color: black;
-  border-radius: 15px;
-  text-decoration: none;
-
-  font-size: 0.8rem;
-}
-
 .full-next-match-container {
   display: none;
   position: fixed;
@@ -302,6 +224,11 @@
   width: 90%;
   justify-self: center;
   align-self: center;
+  z-index: 4;
+}
+
+.next-match-wrap .no-match {
+  font-size: 0.9rem;
 }
 
 .next-match-wrap {
@@ -368,7 +295,8 @@
 }
 
 .next-match-teams > div > img {
-  width: 8rem;
+  width: 5rem;
+  margin-bottom: 1.5rem;
 }
 
 .next-match-teams > div .team-name {
@@ -378,6 +306,7 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  font-size: 0.8rem;
 }
 
 .next-match-teams .vs-vertical-line {
@@ -420,6 +349,8 @@
   background-color: rgba(200, 200, 200, 0.2);
   padding: 3px;
   border-radius: 5px;
+  width: 1.2rem;
+  text-align: center;
 }
 
 .next-match-main .next-match-countdown > div .countdown-label {
@@ -429,7 +360,7 @@
 .next-match-wrap .next-match-footer {
   display: flex;
   background-color: white;
-  height: 3rem;
+  height: 4rem;
 }
 
 .next-match-footer .next-match-date {
