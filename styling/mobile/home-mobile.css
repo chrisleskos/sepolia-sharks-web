@@ -16,13 +16,15 @@
 
 .full-next-match-container .close-full-view {
   position: absolute;
-  top: 50px;
+  top: 90px;
   left: 95%;
   transform: translate(-50%, -50%);
   font-size: 3rem;
   font-weight: bold;
   color: white;
   cursor: pointer;
+
+  z-index: 5;
 }
 
 .full-next-match-container .close-full-view:hover {
@@ -273,7 +275,7 @@
   background-color: dodgerblue;
 
   padding: 0 8px;
-  margin: 0;
+  margin: 0 auto;
   transform: translate(0, 100%);
   height: 1.8rem !important;
   width: 3rem;
