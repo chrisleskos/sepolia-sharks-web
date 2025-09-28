@@ -13,6 +13,24 @@ function imageChange() {
 window.addEventListener("load", checkOrientation);
 window.addEventListener("resize", checkOrientation);
 
+const seeFullMatchDetailsBtn = document.getElementsByClassName(
+  "see-full-next-match-btn"
+)[0];
+const fullNextMatchContainer = document.getElementsByClassName(
+  "full-next-match-container"
+)[0];
+const closeFullView = document.getElementsByClassName("close-full-view")[0];
+
+seeFullMatchDetailsBtn.onclick = () => {
+  fullNextMatchContainer.style.display = "flex";
+  htmlTagJs.classList.add("unscrollable");
+};
+
+closeFullView.onclick = () => {
+  fullNextMatchContainer.style.display = "none";
+  htmlTagJs.classList.remove("unscrollable");
+};
+
 function checkOrientation() {
   if (window.matchMedia("(orientation: landscape)").matches) {
     clearInterval(intervalId);
@@ -33,21 +51,27 @@ fetch("/.netlify/functions/schedule")
 function setNextGame(json) {
   if (json.error) return setNoGame();
   let ctaNextMatch = document.getElementsByClassName(
-    "cta-text cta-next-match-text"
+    "cta-text cta-full-next-match-text"
   )[0];
   let nextMatchDetailsWrap = document.getElementsByClassName(
-    "next-match-details-wrap"
+    "full-next-match-details-wrap"
   )[0];
 
   let nextMatchCompetition = document.getElementsByClassName(
-    "next-match-competition"
+    "full-next-match-competition"
   )[0];
-  let nextMatchRound = document.getElementsByClassName("next-match-round")[0];
+  let nextMatchRound = document.getElementsByClassName(
+    "full-next-match-round"
+  )[0];
   let nextMatchTeam = document.getElementsByClassName(
-    "next-match-team-name"
+    "full-next-match-team-name"
   )[0];
-  let nextMatchDate = document.getElementsByClassName("next-match-date")[0];
-  let nextMatchPlace = document.getElementsByClassName("next-match-place")[0];
+  let nextMatchDate = document.getElementsByClassName(
+    "full-next-match-date"
+  )[0];
+  let nextMatchPlace = document.getElementsByClassName(
+    "full-next-match-place"
+  )[0];
 
   // Format Date
   const months = [
@@ -100,7 +124,7 @@ function setNextGame(json) {
   );
 
   // set cta date
-  ctaNextMatch.innerHTML = `${dayOfWeekGR} ${day} ${monthGR} ${year}, <span >${time}</span>`;
+  // ctaNextMatch.innerHTML = `${dayOfWeekGR} ${day} ${monthGR} ${year}, <span >${time}</span>`;
   // set team image
   // nextMatchDetailsWrap.style.backgroundImage = `url(${json.teamImage})`;
   nextMatchCompetition.innerHTML = `<span>${json.competition}</span>`;
@@ -115,12 +139,12 @@ function setNextGame(json) {
 
 function setNoGame() {
   let nextMatchDetailsWrap = document.getElementsByClassName(
-    "next-match-details-wrap"
+    "full-next-match-details-wrap"
   )[0];
 
-  let ctaNextMatch = document.getElementsByClassName(
-    "cta-text cta-next-match-text"
-  )[0];
+  // let ctaNextMatch = document.getElementsByClassName(
+  //   "cta-text cta-full-next-match-text"
+  // )[0];
 
   nextMatchDetailsWrap.innerHTML = `<div class="no-match">Δεν υπάρχουν πληροφορίες για το επόμενο παιχνίδι...</div>`;
   ctaNextMatch.innerHTML =

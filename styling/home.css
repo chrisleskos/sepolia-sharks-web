@@ -79,7 +79,8 @@
 
 .zaharias-social-btn-wrap > a {
   margin-top: 2rem;
-  font-size: 1.2rem;
+  width: 2.3rem;
+  height: 2.3rem;
 }
 
 .zaharias-social-btn-wrap > a:hover {
@@ -87,35 +88,31 @@
   transition-duration: 0.5s;
 }
 
-.zaharias-social-btn-wrap > a > img {
-  width: 2.2rem;
-}
-
-.next-match-wrap .next-match-details-wrap {
+.full-next-match-wrap .full-next-match-details-wrap {
   background-size: auto 100%;
   background-position: 80% 80%;
   overflow: visible;
   background-repeat: no-repeat;
 }
 
-.next-match-round {
+.full-next-match-round {
   font-size: 3rem;
 }
 
-.next-match-competition {
+.full-next-match-competition {
   margin-left: 10rem !important;
 }
 
-.next-match-place {
+.full-next-match-place {
   width: 30%;
   font-size: 1.2rem;
 }
 
-.next-match-place img {
+.full-next-match-place img {
   width: 1.7rem;
 }
 
-.next-match-team-name {
+.full-next-match-team-name {
   font-size: 2.7rem;
 }
 
@@ -139,11 +136,8 @@
   li
   .slide-body
   button.cta-slide-btn {
-  padding: 17px;
-}
-
-.sponsor-slider .slide-body button.cta-slide-btn img {
-  width: 1.7rem;
+  width: 3.3rem;
+  height: 3.3rem;
 }
 
 .sponsor-slider .nebo-slide .slide-body {
@@ -212,8 +206,6 @@
 
 .sponsor-slider.swiffy-slider .slider-container li.sayprint-slide {
   justify-content: center;
-  box-shadow: inset 150px 0 150px -8px rgba(0, 0, 0, 0.5),
-    /* left side */ inset -150px 0 150px -8px rgba(0, 0, 0, 0.5); /* right side */
 }
 
 .sponsor-slider.swiffy-slider .slider-container li.sayprint-slide .slide-body {
@@ -229,7 +221,8 @@
   li.sayprint-slide
   .slide-body
   > img {
-  width: 35rem;
+  height: 50vh;
+  width: auto;
 }
 
 .sponsor-slider.swiffy-slider

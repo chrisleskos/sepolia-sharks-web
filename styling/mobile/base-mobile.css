@@ -16,3 +16,8 @@ body {
   --header-img-ratio-width: 9;
   --header-img-ratio-height: 16;
 }
+
+html.unscrollable,
+html.unscrollable body {
+  overflow: hidden;
+}

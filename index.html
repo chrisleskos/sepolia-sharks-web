@@ -106,12 +106,7 @@
   </head>
   <body>
     <nav>
-      <div
-        class="nav-menu-btn"
-        onclick="document.getElementsByClassName('nav-menu-wrap')[0].classList.add('show')"
-      >
-        &equiv;
-      </div>
+      <div class="nav-menu-btn">&equiv;</div>
       <a href="/" class="nav-logo nav-sharks-logo">
         <img src="img/sharks/shark3.png" />
       </a>
@@ -124,12 +119,7 @@
         <img src="img/sponsors/basketaki.png" />
       </a>
       <div class="nav-menu-wrap">
-        <div
-          class="nav-close-menu-btn"
-          onclick="document.getElementsByClassName('nav-menu-wrap')[0].classList.remove('show')"
-        >
-          &times;
-        </div>
+        <div class="nav-close-menu-btn">&times;</div>
         <div class="nav-options">
           <a href="index.html" class="selected">Home</a>
           <a href="squad.html">Squad</a>
@@ -174,44 +164,71 @@
       </div>
     </header>
     <main>
-      <div class="header-logo">
-        <img src="img/sharks/logo.png" />
+      <div class="next-match-wrap">
+        <div class="next-match-main">
+          <div class="next-match-header">
+            <div class="next-match-competition">W.Cup</div>
+          </div>
+          <div class="next-match-teams">
+            <div class="sepolia-sharks-team">
+              <img src="img/sharks/logo.png" />
+              <div class="team-name">SEPOLIA SHARKS</div>
+            </div>
+            <div class="vs-vertical-line"></div>
+            <div class="next-match-opposing-team">
+              <img src="img/sharks/logo.png" />
+              <div class="team-name">Elapuse BC</div>
+            </div>
+          </div>
+          <div class="next-match-countdown">
+            <div>
+              <div class="counter" id="days-counter">00</div>
+              <div class="countdown-label">DAYS</div>
+            </div>
+            <div class="colons">:</div>
+            <div>
+              <div class="counter" id="hours-counter">00</div>
+              <div class="countdown-label">HRS</div>
+            </div>
+            <div class="colons">:</div>
+            <div>
+              <div class="counter" id="minutes-counter">00</div>
+              <div class="countdown-label">MINS</div>
+            </div>
+            <div class="colons">:</div>
+            <div>
+              <div class="counter" id="seconds-counter">00</div>
+              <div class="countdown-label">SECS</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="next-match-footer">
+          <div class="next-match-date">
+            OCT 04, Sat
+            <span class="neon-time">18:00</span>
+          </div>
+          <div class="see-full-next-match-btn">More</div>
+        </div>
       </div>
-      <div class="intro">
-        <!-- <div class="intro-title">Just an amateur team from Sepolia</div> -->
-        <div class="call-to-action-menu">
-          <div class="cta-wrap cta-next-match-wrap">
-            <div class="cta-title cta-next-match-title">Επόμενος αγώνας</div>
-            <div class="cta-text cta-next-match-text"></div>
-            <a href="#next-match" class="cta-btn cta-next-match-btn"
-              >Δες περισσότερα</a
-            >
+
+      <div class="full-next-match-container">
+        <span class="close-full-view">&times;</span>
+        <div class="full-next-match-wrap" id="full-next-match">
+          <div class="full-next-match-title">
+            NEXT<br />
+            <div>MATCH</div>
           </div>
-          <div class="cta-menu-vertical-line"></div>
-          <div class="cta-wrap cta-meet-squad-wrap">
-            <div class="cta-title cta-meet-squad-title">Γνώρισε την ομάδα</div>
-            <div class="cta-text cta-meet-squad-text">
-              Δες τα μέλη της ομάδας μας για τη Σεζόν 25/26.
-            </div>
-            <a href="squad.html" class="cta-btn cta-meet-squad-btn"
-              >Δες περισσότερα</a
-            >
-          </div>
-          <div class="cta-menu-vertical-line"></div>
-          <div class="cta-wrap cta-zaharias-wrap">
-            <div class="cta-title cta-zaharias-title">
-              Ανακάλυψε τον Ζαχαρία
-            </div>
-            <div class="cta-text cta-zaharias-text">
-              Έχουμε και μασκότ! Μπορεί πολλές φορές να ξεφεύγει από τους
-              τρόπους ευγενείας, αλλά αυτός είναι ο ρόλος του.
-            </div>
-            <a href="#zaharias" class="cta-btn cta-zaharias-btn"
-              >Δες περισσότερα</a
-            >
+          <div class="full-next-match-details-wrap">
+            <div class="full-next-match-competition"></div>
+            <div class="full-next-match-round"></div>
+            <div class="full-next-match-team-name"></div>
+            <div class="full-next-match-date"></div>
+            <button class="full-next-match-place"></button>
           </div>
         </div>
       </div>
+
       <!-- Sponsor Banner Slider -->
       <div
         class="sponsor-slider swiffy-slider slider-item-helper"
@@ -223,11 +240,7 @@
         <ul class="slider-container">
           <li class="sayprint-slide">
             <div class="slide-body">
-              <img src="img/sponsors/sayprintlogo.png" />
-              <span>
-                YOU SAY IT<br />
-                WE PRINT IT
-              </span>
+              <img src="img/sponsors/sayprintadd.jpg" />
               <button
                 class="cta-slide-btn web-slide-btn"
                 onclick='window.location.href="https://www.sayprint.gr/main-home/"'
@@ -293,6 +306,32 @@
           <li class="ab-slide">
             <img src="img/sponsors/abxsharks.png" />
           </li>
+          <li class="zaharias-slide">
+            <div class="meet-zaharias-wrap" id="zaharias">
+              <img src="img/zaharias/happy.png" alt="" />
+              <div class="meet-zaharias-text">
+                <div class="meet-zaharias-title">Meet Zaharias</div>
+                <div class="meet-zaharias-descr">
+                  Η μασκότ της ομάδας μας απέκτησε φωνή. Ακολούθησέ τον Ζαχαρία
+                  εδώ για να μην χάνεις τις καυστικές απόψεις του... στα πάντα.
+                </div>
+                <div class="zaharias-social-btn-wrap">
+                  <a
+                    href="https://www.instagram.com/zaharias.shark/"
+                    class="zaharias-ig-btn"
+                  >
+                    <img src="img/contact/insta-white.png" alt="" />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@zaxarias_shark"
+                    class="zaharias-tiktok-btn"
+                  >
+                    <img src="img/contact/tiktok-white.png" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
 
         <!-- navigation arrows -->
@@ -305,46 +344,8 @@
           <button></button>
           <button></button>
           <button></button>
+          <button></button>
         </div>
-      </div>
-
-      <div class="meet-zaharias-wrap" id="zaharias">
-        <img src="img/zaharias/happy.png" alt="" />
-        <div class="meet-zaharias-text">
-          <div class="meet-zaharias-title">Meet Zaharias</div>
-          <div class="meet-zaharias-descr">
-            Η μασκότ της ομάδας μας απέκτησε φωνή. Ακολούθησέ τον Ζαχαρία εδώ
-            για να μην χάνεις τις καυστικές απόψεις του... στα πάντα.
-          </div>
-          <div class="zaharias-social-btn-wrap">
-            <a
-              href="https://www.instagram.com/zaharias.shark/"
-              class="zaharias-ig-btn"
-            >
-              <img src="img/contact/insta-white.png" alt="" />
-            </a>
-            <a
-              href="https://www.tiktok.com/@zaxarias_shark"
-              class="zaharias-tiktok-btn"
-            >
-              <img src="img/contact/tiktok-white.png" alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="next-match-wrap" id="next-match">
-        <div class="next-match-title">
-          NEXT<br />
-          <div>MATCH</div>
-        </div>
-        <div class="next-match-details-wrap">
-          <div class="next-match-competition"></div>
-          <div class="next-match-round"></div>
-          <div class="next-match-team-name"></div>
-          <div class="next-match-date"></div>
-          <button class="next-match-place"></button>
-        </div>
-        <!-- <img src="img/auxilary/ball.jpg" /> -->
       </div>
     </main>
     <footer>
@@ -357,6 +358,7 @@
         </a>
       </div>
     </footer>
+    <script src="js/base.js"></script>
     <!-- Swiffy JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
@@ -384,3 +386,8 @@
     <script src="js/home.js"></script>
   </body>
 </html>
+
+<!-- TODO: 
+      1. downgrade photos
+      2. create new hero image
+-->
