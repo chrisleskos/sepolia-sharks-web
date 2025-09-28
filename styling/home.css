@@ -67,7 +67,7 @@
 }
 
 .next-match-wrap {
-  width: 40vw;
+  width: min-content;
 }
 
 .next-match-teams > div {
