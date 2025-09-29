@@ -84,9 +84,12 @@ function setNextGame(json) {
   let fullNextMatchRound = document.getElementsByClassName(
     "full-next-match-round"
   )[0];
-  let fullNextMatchTeam = document.getElementsByClassName(
-    "full-next-match-team-name"
-  )[0];
+  let fullNextMatchTeamName = document.getElementById(
+    "full-view-opposing-team-name"
+  );
+  let fullNextMatchTeamImg = document.getElementById(
+    "full-view-opposing-team-img"
+  );
   let fullNextMatchDate = document.getElementsByClassName(
     "full-next-match-date"
   )[0];
@@ -167,7 +170,8 @@ function setNextGame(json) {
   // set Full next game
   fullNextMatchCompetition.innerHTML = `<span>${json.competition}</span>`;
   fullNextMatchRound.innerText = "Game " + json.round;
-  fullNextMatchTeam.innerText = json.teamName;
+  fullNextMatchTeamName.innerText = json.teamName;
+  fullNextMatchTeamImg.src = json.teamImage;
   fullNextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek} <span class='neon-time'>${time}</span>`;
   fullNextMatchPlace.innerHTML = `<img src="img/auxilary/navigate.png" /><div>${json.place}</div>`;
   fullNextMatchPlace.onclick = () => {

@@ -16,8 +16,8 @@
 
 .full-next-match-container .close-full-view {
   position: absolute;
-  top: 90px;
-  left: 95%;
+  top: 100px;
+  left: 90%;
   transform: translate(-50%, -50%);
   font-size: 3rem;
   font-weight: bold;
@@ -33,23 +33,23 @@
 }
 
 .full-next-match-wrap {
+  --width: 90vw;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  height: 40rem;
-  width: 100%;
-  padding: 4rem 0 0 0;
+  width: var(--width);
+  height: calc(var(--width) * 16 / 9);
+  padding: 0;
   background: linear-gradient(-48deg, rgb(30, 30, 30) 70%, #222 10%);
   margin: auto 0;
 }
 
-.full-next-match-wrap .full-next-match-title,
-.next-match-label {
+.full-next-match-wrap .full-next-match-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +58,8 @@
   width: calc(2.3rem * 4);
   height: fit-content;
 
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
+  margin: 0 0 1rem 0;
 
   text-align: center;
   color: white;
@@ -71,8 +72,7 @@
   line-height: 2.8rem;
 }
 
-.full-next-match-wrap .full-next-match-title > div,
-.next-match-label > div {
+.full-next-match-wrap .full-next-match-title > div {
   color: #222;
   background-color: white;
   margin: 0;
@@ -81,8 +81,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* height: 1rem; */
-  /* height: 30px; */
   text-align: center;
   font-size: 1.8rem;
   line-height: 1.4rem;
@@ -91,13 +89,14 @@
 .full-next-match-wrap .full-next-match-details-wrap {
   position: relative;
   display: grid;
-  row-gap: 1rem;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 3rem min-content min-content auto;
   justify-content: center;
   align-items: flex-start;
   height: 25rem;
   width: 100%;
+
+  margin: 0;
 
   background-repeat: no-repeat;
   background-size: auto 25%;
@@ -113,8 +112,8 @@
 }
 
 .full-next-match-competition {
-  grid-column: 1;
-  grid-row: 1;
+  grid-column: 1 / -1;
+  grid-row: 2;
 
   justify-content: center;
   align-items: center;
@@ -134,15 +133,17 @@
 }
 
 .full-next-match-round {
+  grid-column: 1 / -1;
   font-size: 2rem;
   padding-left: 0.4rem;
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: white;
+  justify-content: center;
 }
 
-.full-next-match-team-name,
+.full-next-match-teams,
 .full-next-match-date,
 .full-next-match-place,
 .no-match {
@@ -208,10 +209,30 @@
   text-overflow: ellipsis;
 }
 
+.full-next-match-teams {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-next-match-teams .full-next-match-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 2rem 2rem;
+  width: 6rem;
+}
+
+.full-next-match-teams .full-next-match-team img {
+  width: 5rem;
+  margin-bottom: 1rem;
+}
+
 .full-next-match-team-name {
-  padding: 1rem 0 1rem 0;
+  padding: 0.5rem 0;
   justify-self: center;
-  font-size: 2.2rem;
+  font-size: 0.7rem;
   font-family: "Oxanium", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -312,11 +333,12 @@
   font-size: 0.8rem;
 }
 
-.next-match-teams .vs-vertical-line {
-  width: 1.5px;
+.vs-vertical-line {
+  width: 1px;
   height: 4rem;
   border-radius: 10px;
-  background-color: rgba(100, 100, 100, 0);
+  margin: 2.5rem 0 auto 0;
+  background-color: rgba(100, 100, 100, 0.3);
 }
 
 .next-match-main .next-match-countdown {

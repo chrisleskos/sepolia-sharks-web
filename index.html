@@ -27,7 +27,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      media="screen and (orientation: landscape)"
+      media="screen and (min-width: 730px)"
       href="styling/base.css"
     />
 
@@ -39,7 +39,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      media="screen and (orientation: landscape)"
+      media="screen and (min-width: 730px)"
       href="styling/navbar.css"
     />
 
@@ -51,7 +51,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      media="screen and (orientation: landscape)"
+      media="screen and (min-width: 730px)"
       href="styling/header.css"
     />
 
@@ -63,7 +63,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      media="screen and (orientation: landscape)"
+      media="screen and (min-width: 730px)"
       href="styling/main.css"
     />
     <link
@@ -74,7 +74,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      media="screen and (orientation: landscape)"
+      media="screen and (min-width: 730px)"
       href="styling/home.css"
     />
 
@@ -174,7 +174,6 @@
               <img src="img/sharks/logo.png" />
               <div class="team-name">SEPOLIA SHARKS</div>
             </div>
-            <div class="vs-vertical-line"></div>
             <div class="next-match-opposing-team">
               <img src="" alt="Opponent" />
               <div class="team-name"></div>
@@ -217,9 +216,26 @@
             <div>MATCH</div>
           </div>
           <div class="full-next-match-details-wrap">
-            <div class="full-next-match-competition"></div>
             <div class="full-next-match-round"></div>
-            <div class="full-next-match-team-name"></div>
+            <div class="full-next-match-competition"></div>
+            <div class="full-next-match-teams">
+              <div class="full-next-match-team">
+                <img src="img/sharks/logo.png" />
+                <div class="full-next-match-team-name">SEPOLIA SHARKS</div>
+              </div>
+              <div class="vs-vertical-line"></div>
+              <div class="full-next-match-team">
+                <img
+                  src=""
+                  alt="Opposing team logo"
+                  id="full-view-opposing-team-img"
+                />
+                <div
+                  class="full-next-match-team-name"
+                  id="full-view-opposing-team-name"
+                ></div>
+              </div>
+            </div>
             <div class="full-next-match-date"></div>
             <button class="full-next-match-place"></button>
           </div>
