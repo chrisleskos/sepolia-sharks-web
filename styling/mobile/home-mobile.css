@@ -35,7 +35,7 @@
   position: absolute;
   transform: translate(-50%, -100%);
   left: 50%;
-  top: 99%;
+  top: 99vh;
   width: fit-content;
   height: fit-content;
   padding: 2px 12px;
