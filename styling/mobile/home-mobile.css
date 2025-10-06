@@ -75,21 +75,21 @@
   align-items: center;
   flex-direction: column;
 
-  width: calc(2.3rem * 4);
+  width: calc(1.8rem * 4);
   height: fit-content;
 
-  padding-bottom: 1rem;
-  margin: 0 0 1rem 0;
+  padding: 4rem 0;
+  margin: 0 0 auto 0;
 
   text-align: center;
   color: white;
 
-  font-size: 3.9rem;
+  font-size: 3rem;
   font-family: "Tektur", sans-serif;
   font-weight: 400;
   font-style: normal;
 
-  line-height: 2.8rem;
+  line-height: 2.2rem;
 }
 
 .full-next-match-wrap .full-next-match-title > div {
@@ -98,12 +98,12 @@
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   text-align: center;
-  font-size: 1.8rem;
-  line-height: 1.4rem;
+  font-size: 1.2rem;
+  line-height: 1rem;
 }
 
 .full-next-match-wrap .full-next-match-details-wrap {
