@@ -210,6 +210,7 @@
 
       <div class="full-next-match-container">
         <span class="close-full-view">&times;</span>
+        <button id="download-full-view-btn">&#x21e9;</button>
         <div class="full-next-match-wrap" id="full-next-match">
           <div class="full-next-match-title">
             NEXT<br />
@@ -397,10 +398,23 @@
       });
     </script>
     <script src="js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script>
+      document.getElementById("download-full-view-btn").onclick = function () {
+        const element = document.getElementById("full-next-match");
+        html2canvas(element, { scale: 2 }).then((canvas) => {
+          const link = document.createElement("a");
+          link.download = "element.png";
+          link.href = canvas.toDataURL();
+          link.click();
+        });
+      };
+    </script>
   </body>
 </html>
 
 <!-- TODO: 
       1. downgrade photos
       2. create new hero image
+      3. better nebo + say print swiffy
 -->

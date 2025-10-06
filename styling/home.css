@@ -40,14 +40,20 @@
 
 .full-next-match-container .close-full-view {
   position: absolute;
-  top: 70px;
+  top: 10px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   font-size: 3rem;
 }
 
+.full-next-match-container #download-full-view-btn {
+  top: 95%;
+}
+
 .full-next-match-wrap {
-  --width: 420px;
+  --height: 100vh;
+  width: calc(var(--height) * 9 / 16);
+  height: var(--height);
 }
 
 .full-next-match-wrap .full-next-match-details-wrap {
