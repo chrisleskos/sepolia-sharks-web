@@ -53,7 +53,7 @@
 }
 
 .full-next-match-wrap {
-  --width: 90vw;
+  --width: 100vw;
   position: absolute;
   top: 50%;
   left: 50%;
