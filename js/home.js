@@ -160,7 +160,6 @@ function setNextGame(json) {
 
   // set next game
   nextMatchCompetition.innerHTML = json.competition;
-  nextMatchOpposingTeamImg.src = json.teamImage;
   nextMatchOpposingTeamName.innerHTML = json.teamName;
   nextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek.substring(
     0,
@@ -171,12 +170,28 @@ function setNextGame(json) {
   fullNextMatchCompetition.innerHTML = `<span>${json.competition}</span>`;
   fullNextMatchRound.innerText = "Game " + json.round;
   fullNextMatchTeamName.innerText = json.teamName;
-  fullNextMatchTeamImg.src = json.teamImage;
   fullNextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek} <span class='neon-time'>${time}</span>`;
   fullNextMatchPlace.innerHTML = `<img src="img/auxilary/navigate.png" /><div>${json.place}</div>`;
   fullNextMatchPlace.onclick = () => {
     window.open(`https://www.google.com/maps/search/${json.place}`, "_blank");
   };
+
+  // set images
+  fetch(`https://images.weserv.nl/?url=${encodeURIComponent(json.teamImage)}`)
+    .then((res) => res.blob())
+    .then((blob) => {
+      const objectUrl = URL.createObjectURL(blob);
+      nextMatchOpposingTeamImg.src = objectUrl;
+      fullNextMatchTeamImg.src = objectUrl;
+
+      // Now continue with all your DOM updates
+    })
+    .catch((err) => {
+      console.error("Image fetch error:", err);
+      // fallback to original URL
+      nextMatchOpposingTeamImg.src = json.teamImage;
+      fullNextMatchTeamImg.src = json.teamImage;
+    });
 }
 
 function setNoGame() {

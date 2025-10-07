@@ -175,7 +175,10 @@
               <div class="team-name">SEPOLIA SHARKS</div>
             </div>
             <div class="next-match-opposing-team">
-              <img src="" alt="Opponent" />
+              <img
+                src="https://images.weserv.nl/?url=https://example.com/your-image.jpg"
+                alt="Opponent"
+              />
               <div class="team-name"></div>
             </div>
           </div>
@@ -230,7 +233,7 @@
               <div class="vs-vertical-line"></div>
               <div class="full-next-match-team">
                 <img
-                  src=""
+                  src="https://images.weserv.nl/?url=https://example.com/your-image.jpg"
                   alt="Opposing team logo"
                   id="full-view-opposing-team-img"
                 />
@@ -405,7 +408,7 @@
     <script>
       document.getElementById("download-full-view-btn").onclick = function () {
         const element = document.getElementById("full-next-match");
-        html2canvas(element, { scale: 2 }).then((canvas) => {
+        html2canvas(element).then((canvas) => {
           const link = document.createElement("a");
           link.download = "element.png";
           link.href = canvas.toDataURL();

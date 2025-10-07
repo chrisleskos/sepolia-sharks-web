@@ -79,7 +79,7 @@
   height: fit-content;
 
   padding: 4rem 0;
-  margin: 0 0 auto 0;
+  margin: auto 0 0 0;
 
   text-align: center;
   color: white;
@@ -116,7 +116,7 @@
   height: 25rem;
   width: 100%;
 
-  margin: 0;
+  margin: 0 0 auto 0;
 
   background-repeat: no-repeat;
   background-size: auto 25%;
