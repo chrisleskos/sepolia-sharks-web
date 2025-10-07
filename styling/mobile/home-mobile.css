@@ -263,7 +263,7 @@
   font-weight: 600;
   font-style: normal;
   color: white;
-  border-top: rgba(50, 50, 50, 0.4) solid 1px;
+  border-bottom: rgba(50, 50, 50, 0.4) solid 1px;
 }
 
 .no-match {
@@ -360,14 +360,6 @@
   font-weight: 600;
   font-style: normal;
   font-size: 0.8rem;
-}
-
-.vs-vertical-line {
-  width: 1px;
-  height: 4rem;
-  border-radius: 10px;
-  margin: 2.5rem 0 auto 0;
-  background-color: rgba(100, 100, 100, 0.3);
 }
 
 .next-match-main .next-match-countdown {
