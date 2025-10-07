@@ -160,6 +160,9 @@ function setNextGame(json) {
 
   // set next game
   nextMatchCompetition.innerHTML = json.competition;
+  if (!json.competition.toUpperCase().includes("CUP")) {
+    nextMatchCompetition.classList.add("league-match");
+  }
   nextMatchOpposingTeamName.innerHTML = json.teamName;
   nextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek.substring(
     0,
@@ -167,7 +170,10 @@ function setNextGame(json) {
   )} <span class='neon-time'>${time}</span>`;
 
   // set Full next game
-  fullNextMatchCompetition.innerHTML = `<span>${json.competition}</span>`;
+  fullNextMatchCompetition.innerHTML = `${json.competition}`;
+  if (!json.competition.toUpperCase().includes("CUP")) {
+    fullNextMatchCompetition.classList.add("league-match");
+  }
   fullNextMatchRound.innerText = "Game " + json.round;
   fullNextMatchTeamName.innerText = json.teamName;
   fullNextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek} <span class='neon-time'>${time}</span>`;
