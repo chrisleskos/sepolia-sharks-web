@@ -1,4 +1,5 @@
 import { load } from "cheerio";
+import { Buffer } from "node:buffer";
 
 export async function handler(event) {
   if (event.httpMethod === "OPTIONS") {
