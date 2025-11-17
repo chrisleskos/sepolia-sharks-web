@@ -157,7 +157,8 @@ function setNextGame(json) {
     fullNextMatchCompetition.classList.add("league-match");
   }
   fullNextMatchRound.innerText = "Game " + json.round;
-  fullNextMatchTeamImg.src = json.teamImage;
+  fullNextMatchTeamImg.src =
+    "https://api.allorigins.win/raw?url=" + encodeURIComponent(json.teamImage);
   fullNextMatchTeamName.innerText = json.teamName;
   fullNextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek} <span class='neon-time'>${time}</span>`;
   fullNextMatchPlace.innerHTML = `<img src="img/auxilary/navigate.png" /><div>${json.place}</div>`;
