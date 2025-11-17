@@ -53,7 +53,9 @@ export async function handler(event) {
 
     // Fetch the image and convert to base64
     console.log("ABOUT TO START BUFFER");
-    const imgResp = await fetch(teamImageUrl);
+    const imgResp = await fetch(teamImageUrl).catch((err) => {
+      console.log(err);
+    });
     console.log("FETCHED AGAIN");
     const buffer = await imgResp.arrayBuffer();
     console.log("AND AGAIN ");
