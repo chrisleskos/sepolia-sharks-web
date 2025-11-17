@@ -35,7 +35,7 @@ main {
   border-radius: 12px;
   box-shadow: inset 0px 0px 15px 8px black;
 
-  font-family: "Teko", sans-serif;
+  font-family: var(--secondary-font);
   font-optical-sizing: auto;
   font-style: normal;
 
@@ -112,7 +112,7 @@ main {
   position: absolute;
   background-color: transparent;
   font-size: 1.3rem;
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -136,7 +136,7 @@ main {
   color: var(--home-shirt-outline);
   text-shadow: -2px -2px 0 var(--neon-color), 2px -2px 0 var(--neon-color),
     -2px 2px 0 var(--neon-color), 2px 2px 0 var(--neon-color);
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
 }
 
@@ -221,7 +221,7 @@ main {
 
 .player.details .player-details {
   display: block;
-  font-family: "Tektur", sans-serif;
+  font-family: var(--aggressive-font);
   font-weight: 400;
   font-style: normal;
 }
@@ -276,7 +276,7 @@ main {
 .squad-title {
   text-align: center;
   font-size: 1.8rem;
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -287,7 +287,7 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -345,7 +345,7 @@ main {
   top: 45%;
   font-size: 1rem;
   transform: translate(-50%, -50%);
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-weight: 600;
 }
@@ -394,7 +394,7 @@ select,
   appearance: base-select;
   width: 11.5rem;
   cursor: pointer;
-  font-family: "Tektur", sans-serif;
+  font-family: var(--aggressive-font);
   font-weight: 400;
   font-style: normal;
 }
@@ -402,7 +402,7 @@ select,
 #smartphone-sort-select {
   width: 11.5rem;
   cursor: pointer;
-  font-family: "Tektur", sans-serif;
+  font-family: var(--aggressive-font);
   font-weight: 400;
   font-style: normal;
 }

@@ -10,16 +10,6 @@ let globalNextMatchHour;
 let globalNextMatchMinute;
 let globalCountdownIntervalId;
 
-function imageChange() {
-  headerImage = document.getElementById("header-img");
-  headerImage.src = imagesPath + "h" + (counter + 1) + ".jpg";
-
-  counter = ++counter % totalImages;
-}
-
-window.addEventListener("load", checkOrientation);
-window.addEventListener("resize", checkOrientation);
-
 const seeFullMatchDetailsBtn = document.getElementsByClassName(
   "see-full-next-match-btn"
 )[0];
@@ -37,15 +27,6 @@ closeFullView.onclick = () => {
   fullNextMatchContainer.style.display = "none";
   htmlTagJs.classList.remove("unscrollable");
 };
-
-function checkOrientation() {
-  if (window.matchMedia("(orientation: landscape)").matches) {
-    clearInterval(intervalId);
-    intervalId = setInterval(imageChange, 8000);
-  } else {
-    clearInterval(intervalId);
-  }
-}
 
 fetch("/.netlify/functions/schedule")
   .then((res) => {
@@ -163,6 +144,7 @@ function setNextGame(json) {
   if (!json.competition.toUpperCase().includes("CUP")) {
     nextMatchCompetition.classList.add("league-match");
   }
+  nextMatchOpposingTeamImg.src = json.teamImage;
   nextMatchOpposingTeamName.innerHTML = json.teamName;
   nextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek.substring(
     0,
@@ -175,29 +157,13 @@ function setNextGame(json) {
     fullNextMatchCompetition.classList.add("league-match");
   }
   fullNextMatchRound.innerText = "Game " + json.round;
+  fullNextMatchTeamImg.src = json.teamImage;
   fullNextMatchTeamName.innerText = json.teamName;
   fullNextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek} <span class='neon-time'>${time}</span>`;
   fullNextMatchPlace.innerHTML = `<img src="img/auxilary/navigate.png" /><div>${json.place}</div>`;
   fullNextMatchPlace.onclick = () => {
     window.open(`https://www.google.com/maps/search/${json.place}`, "_blank");
   };
-
-  // set images
-  fetch(`https://images.weserv.nl/?url=${encodeURIComponent(json.teamImage)}`)
-    .then((res) => res.blob())
-    .then((blob) => {
-      const objectUrl = URL.createObjectURL(blob);
-      nextMatchOpposingTeamImg.src = objectUrl;
-      fullNextMatchTeamImg.src = objectUrl;
-
-      // Now continue with all your DOM updates
-    })
-    .catch((err) => {
-      console.error("Image fetch error:", err);
-      // fallback to original URL
-      nextMatchOpposingTeamImg.src = json.teamImage;
-      fullNextMatchTeamImg.src = json.teamImage;
-    });
 }
 
 function setNoGame() {

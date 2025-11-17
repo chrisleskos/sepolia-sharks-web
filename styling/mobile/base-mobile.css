@@ -15,6 +15,11 @@ body {
   --background-blue: #0d243f;
   --header-img-ratio-width: 9;
   --header-img-ratio-height: 16;
+  --main-font: "Epunda Sans", sans-serif;
+  --secondary-font: "Teko", sans-serif;
+  --calligraphic-font: "Ephesis", cursive;
+  --aggressive-font: "Tektur", sans-serif;
+  --team-name-font: "Oxanium", sans-serif;
 }
 
 html.unscrollable,

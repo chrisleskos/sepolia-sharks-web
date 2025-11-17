@@ -11,7 +11,7 @@ footer .sharkattack {
   text-align: center;
   border-top: rgba(60, 60, 60, 0.2) 0.5px solid;
   padding: 4rem 0 0 0;
-  font-family: "Ephesis", cursive;
+  font-family: var(--calligraphic-font);
   font-weight: 600;
   font-style: normal;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
@@ -24,7 +24,7 @@ footer .contact {
   align-items: center;
   margin: 7rem 0;
 
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;

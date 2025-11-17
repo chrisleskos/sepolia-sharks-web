@@ -45,7 +45,7 @@
   border: 2px solid white;
   color: white;
   border-radius: 10px;
-  font-family: "Teko", sans-serif;
+  font-family: var(--secondary-font);
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 100;
@@ -85,7 +85,7 @@
   color: white;
 
   font-size: 3rem;
-  font-family: "Tektur", sans-serif;
+  font-family: var(--aggressive-font);
   font-weight: 400;
   font-style: normal;
 
@@ -140,7 +140,7 @@
   align-self: center;
   justify-self: center;
   font-size: 1rem;
-  font-family: "Teko", sans-serif;
+  font-family: var(--secondary-font);
   font-optical-sizing: auto;
   font-style: normal;
   color: white;
@@ -180,7 +180,7 @@
   width: 100%;
   color: white;
 
-  font-family: "Teko", sans-serif;
+  font-family: var(--secondary-font);
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 100;
@@ -258,7 +258,7 @@
   padding: 0.5rem 0;
   justify-self: center;
   font-size: 0.7rem;
-  font-family: "Oxanium", sans-serif;
+  font-family: var(--team-name-font);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -286,7 +286,7 @@
   border-radius: 10px;
   margin: 2rem auto;
   overflow: hidden;
-  font-family: "Teko", sans-serif;
+  font-family: var(--secondary-font);
 }
 
 .next-match-wrap .next-match-main {
@@ -312,7 +312,7 @@
   align-self: center;
   justify-self: center;
   font-size: 1rem;
-  font-family: "Teko", sans-serif;
+  font-family: var(--secondary-font);
   font-optical-sizing: auto;
   font-style: normal;
   color: white;
@@ -355,7 +355,7 @@
 .next-match-teams > div .team-name {
   font-size: fit-content;
   color: white;
-  font-family: "Oxanium", sans-serif;
+  font-family: var(--team-name-font);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -375,7 +375,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Teko", sans-serif;
+  font-family: var(--secondary-font);
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 100;
@@ -415,7 +415,7 @@
   align-items: center;
   justify-content: center;
 
-  font-family: "Teko", sans-serif;
+  font-family: var(--secondary-font);
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 100;
@@ -524,7 +524,7 @@
 
 .sponsor-slider .nebo-slide .slide-body > p {
   margin-left: 0.5rem;
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -533,7 +533,7 @@
 }
 
 .sponsor-slider .nebo-slide .slide-body > p > span {
-  font-family: "Ephesis", cursive;
+  font-family: var(--calligraphic-font);
   font-weight: 400;
   font-style: normal;
   font-size: 2rem;
@@ -750,14 +750,14 @@
 .meet-zaharias-text {
   /* width: 30%; */
   margin-left: -2.3rem;
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
 }
 
 .meet-zaharias-title {
   font-size: 2rem;
   padding: 20px 0;
-  font-family: "Epunda Sans", sans-serif;
+  font-family: var(--main-font);
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;

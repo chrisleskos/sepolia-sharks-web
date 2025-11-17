@@ -1,4 +1,4 @@
-import cheerio from "cheerio";
+import { load } from "cheerio";
 
 export async function handler(event) {
   if (event.httpMethod === "OPTIONS") {
@@ -17,7 +17,7 @@ export async function handler(event) {
     const url = "https://www.basketaki.com/teams/sepolia-sharks/schedule";
     const response = await fetch(url);
     const html = await response.text();
-    const $ = cheerio.load(html);
+    const $ = load(html);
 
     const rows = $("table.team-result tbody tr");
     let earliestDate = null;
@@ -42,12 +42,22 @@ export async function handler(event) {
       };
     }
 
+    // Scrape the image URL
+    const teamImageUrl = earliestRow
+      .find("td.team-result__vs .team-meta__logo a img")
+      .attr("src");
+
+    // Fetch the image and convert to base64
+    const imgResp = await fetch(teamImageUrl);
+    const buffer = await imgResp.arrayBuffer();
+    const base64Image = `data:${imgResp.headers.get(
+      "content-type"
+    )};base64,${Buffer.from(buffer).toString("base64")}`;
+
     const nextMatchJson = {
       round: earliestRow.find("td.team-result__date").eq(0).text().trim(),
       date: earliestRow.find("td.team-result__date").eq(1).text().trim(),
-      teamImage: earliestRow
-        .find("td.team-result__vs .team-meta__logo a img")
-        .attr("src"),
+      teamImage: base64Image,
       teamName: earliestRow
         .find("td.team-result__vs .team-meta__name a")
         .text()
