@@ -81,6 +81,7 @@ export async function handler(event) {
       body: JSON.stringify(nextMatchJson),
     };
   } catch (err) {
+    console.log(err.message);
     return {
       statusCode: 500,
       headers: { "Access-Control-Allow-Origin": "*" },
