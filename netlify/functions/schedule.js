@@ -17,11 +17,8 @@ export async function handler(event) {
   try {
     const url = "https://www.basketaki.com/teams/sepolia-sharks/schedule";
     const response = await fetch(url);
-    console.log("I FETCHED IT");
     const html = await response.text();
-    console.log("GOT IT AS TEXT");
     const $ = load(html);
-    console.log("LOADED IT AT $");
 
     const rows = $("table.team-result tbody tr");
     let earliestDate = null;
@@ -51,45 +48,20 @@ export async function handler(event) {
       .find("td.team-result__vs .team-meta__logo a img")
       .attr("src");
 
-    //TEEEEEEST
-    https
-      .get("https://basketaki-web.b-cdn.net/teams/the-jokers.png", (res) => {
-        console.log("Status code:", res.statusCode);
-        console.log("Content-Type:", res.headers["content-type"]);
-        res.on("data", (chunk) => {});
-        res.on("end", () => console.log("Request completed"));
-      })
-      .on("error", (err) => {
-        console.log("Request failed:", err);
-      });
-    ////////////////////
-
     // Fetch the image and convert to base64
-    console.log("ABOUT TO START BUFFER ON IMAGE URL: " + teamImageUrl);
-    const imgResp = await fetch(
-      "https://basketaki-web.b-cdn.net/teams/the-jokers.png",
-      {
-        headers: {
-          "User-Agent": "Mozilla/5.0 (compatible; MyNetlifyFunction/1.0)",
-          Connection: "keep-alive",
-        },
-      }
-    ).catch((err) => {
+    const imgResp = await fetch(teamImageUrl).catch((err) => {
       console.log(err);
     });
-    console.log("FETCHED AGAIN");
-    const buffer = await imgResp.arrayBuffer();
-    console.log("AND AGAIN ");
-    const base64Image = `data:${imgResp.headers.get(
-      "content-type"
-    )};base64,${Buffer.from(buffer).toString("base64")}`;
 
-    console.log("AND GOT THAT BASE64 IMAGE");
+    // const buffer = await imgResp.arrayBuffer();
+    // const base64Image = `data:${imgResp.headers.get(
+    //   "content-type"
+    // )};base64,${Buffer.from(buffer).toString("base64")}`;
 
     const nextMatchJson = {
       round: earliestRow.find("td.team-result__date").eq(0).text().trim(),
       date: earliestRow.find("td.team-result__date").eq(1).text().trim(),
-      teamImage: base64Image,
+      teamImage: teamImageUrl,
       teamName: earliestRow
         .find("td.team-result__vs .team-meta__name a")
         .text()

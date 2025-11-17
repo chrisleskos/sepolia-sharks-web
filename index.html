@@ -437,7 +437,12 @@
     <script>
       document.getElementById("download-full-view-btn").onclick = function () {
         const element = document.getElementById("full-next-match");
-        html2canvas(element, { scale: 4 }).then((canvas) => {
+        html2canvas(element, {
+          scale: 4,
+          useCORS: true,
+          allowTaint: true,
+          proxy: "https://api.allorigins.win/raw?url=",
+        }).then((canvas) => {
           const link = document.createElement("a");
           link.download = "element.png";
           link.href = canvas.toDataURL();
