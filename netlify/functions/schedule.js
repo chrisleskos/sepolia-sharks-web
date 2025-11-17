@@ -17,8 +17,11 @@ export async function handler(event) {
   try {
     const url = "https://www.basketaki.com/teams/sepolia-sharks/schedule";
     const response = await fetch(url);
+    console.log("I FETCHED IT");
     const html = await response.text();
+    console.log("GOT IT AS TEXT");
     const $ = load(html);
+    console.log("LOADED IT AT $");
 
     const rows = $("table.team-result tbody tr");
     let earliestDate = null;
@@ -49,11 +52,16 @@ export async function handler(event) {
       .attr("src");
 
     // Fetch the image and convert to base64
+    console.log("ABOUT TO START BUFFER");
     const imgResp = await fetch(teamImageUrl);
+    console.log("FETCHED AGAIN");
     const buffer = await imgResp.arrayBuffer();
+    console.log("AND AGAIN ");
     const base64Image = `data:${imgResp.headers.get(
       "content-type"
     )};base64,${Buffer.from(buffer).toString("base64")}`;
+
+    console.log("AND GOT THAT BASE64 IMAGE");
 
     const nextMatchJson = {
       round: earliestRow.find("td.team-result__date").eq(0).text().trim(),
