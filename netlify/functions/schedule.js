@@ -52,12 +52,15 @@ export async function handler(event) {
 
     // Fetch the image and convert to base64
     console.log("ABOUT TO START BUFFER ON IMAGE URL: " + teamImageUrl);
-    const imgResp = await fetch(teamImageUrl, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; MyNetlifyFunction/1.0)",
-        Connection: "keep-alive",
-      },
-    }).catch((err) => {
+    const imgResp = await fetch(
+      "https://basketaki-web.b-cdn.net/teams/the-jokers.png",
+      {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (compatible; MyNetlifyFunction/1.0)",
+          Connection: "keep-alive",
+        },
+      }
+    ).catch((err) => {
       console.log(err);
     });
     console.log("FETCHED AGAIN");
