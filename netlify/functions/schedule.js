@@ -52,7 +52,7 @@ export async function handler(event) {
       .attr("src");
 
     // Fetch the image and convert to base64
-    console.log("ABOUT TO START BUFFER");
+    console.log("ABOUT TO START BUFFER ON IMAGE URL: " + teamImageUrl);
     const imgResp = await fetch(teamImageUrl).catch((err) => {
       console.log(err);
     });
