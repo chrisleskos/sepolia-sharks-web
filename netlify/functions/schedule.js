@@ -1,4 +1,5 @@
 import { load } from "cheerio";
+import https from "https";
 
 export async function handler(event) {
   if (event.httpMethod === "OPTIONS") {
@@ -49,6 +50,19 @@ export async function handler(event) {
     const teamImageUrl = earliestRow
       .find("td.team-result__vs .team-meta__logo a img")
       .attr("src");
+
+    //TEEEEEEST
+    https
+      .get("https://basketaki-web.b-cdn.net/teams/the-jokers.png", (res) => {
+        console.log("Status code:", res.statusCode);
+        console.log("Content-Type:", res.headers["content-type"]);
+        res.on("data", (chunk) => {});
+        res.on("end", () => console.log("Request completed"));
+      })
+      .on("error", (err) => {
+        console.log("Request failed:", err);
+      });
+    ////////////////////
 
     // Fetch the image and convert to base64
     console.log("ABOUT TO START BUFFER ON IMAGE URL: " + teamImageUrl);
