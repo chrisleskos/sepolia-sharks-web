@@ -1,5 +1,4 @@
 import { load } from "cheerio";
-import https from "https";
 
 export async function handler(event) {
   if (event.httpMethod === "OPTIONS") {

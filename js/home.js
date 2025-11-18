@@ -144,7 +144,7 @@ function setNextGame(json) {
   if (!json.competition.toUpperCase().includes("CUP")) {
     nextMatchCompetition.classList.add("league-match");
   }
-  nextMatchOpposingTeamImg.src = json.teamImage;
+  nextMatchOpposingTeamImg.src = logos[json.teamImage.split("/").pop()];
   nextMatchOpposingTeamName.innerHTML = json.teamName;
   nextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek.substring(
     0,
@@ -157,8 +157,7 @@ function setNextGame(json) {
     fullNextMatchCompetition.classList.add("league-match");
   }
   fullNextMatchRound.innerText = "Game " + json.round;
-  fullNextMatchTeamImg.src =
-    "https://api.allorigins.win/raw?url=" + encodeURIComponent(json.teamImage);
+  fullNextMatchTeamImg.src = logos[json.teamImage.split("/").pop()];
   fullNextMatchTeamName.innerText = json.teamName;
   fullNextMatchDate.innerHTML = `${month} ${day}, ${dayOfWeek} <span class='neon-time'>${time}</span>`;
   fullNextMatchPlace.innerHTML = `<img src="img/auxilary/navigate.png" /><div>${json.place}</div>`;

@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "cache-logos": "node cache-logos.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
