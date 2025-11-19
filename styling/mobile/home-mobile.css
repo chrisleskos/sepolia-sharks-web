@@ -489,7 +489,7 @@
 .next-match-wrap .match-score .score {
   /* padding: 1rem; */
   margin: 0 0.2rem;
-  height: 5.25rem;
+  height: 5rem;
   width: 4.5rem;
   text-align: center;
   background-color: rgba(200, 200, 200, 0.2);
@@ -509,7 +509,9 @@
 
 .matches-container .slider-nav {
   display: flex;
+  top: 40%;
   width: 4rem;
+  height: 4rem;
 }
 
 .matches-container .slider-nav:before {
