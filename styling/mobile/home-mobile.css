@@ -497,6 +497,8 @@
   border-radius: 5px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
+  text-shadow: -2.5px -2.5px 0 #000, 2.5px -2.5px 0 #000, -2.5px 2.5px 0 #000,
+    2.5px 2.5px 0 #000;
 }
 
 .next-match-wrap .match-score .score:nth-child(2) {

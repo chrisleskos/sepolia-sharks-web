@@ -224,7 +224,7 @@ function setPreviousGames(json) {
               </div>
               <div class="next-match-teams">
                 <div class="sepolia-sharks-team">
-                  <img src="img/sharks/logo.png" alt="sharks game logo" />
+                  <img src="img/sharks/logo.webp" alt="sharks game logo" />
                   <div class="team-name">Sepolia Sharks</div>
                 </div>
                 <div class="next-match-opposing-team">
