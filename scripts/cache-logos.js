@@ -1,3 +1,8 @@
+/*
+ * THIS SCRIPT NEEDS TO BE RAN LOCALLY
+ * WHEN OPPOSING TEAMS LOGOS UPDATE IS NEEDED
+ */
+
 import fetch from "node-fetch";
 import { load } from "cheerio";
 import fs from "fs";

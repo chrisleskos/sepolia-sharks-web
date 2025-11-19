@@ -67,8 +67,20 @@
   width: 1.7rem;
 }
 
-.next-match-wrap {
+.full-next-match-sponsors {
+  margin-bottom: 3rem;
+}
+
+.full-next-match-sponsors > img {
+  height: 4.2rem;
+}
+.full-next-match-sponsors > img.full-next-match-nebo {
+  height: 6rem;
+}
+
+.matches-container div.match {
   width: min-content;
+  height: 382px;
 }
 
 .next-match-teams > div {

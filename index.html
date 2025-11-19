@@ -175,52 +175,76 @@
       </div>
     </header>
     <main>
-      <div class="next-match-wrap">
-        <div class="next-match-main">
-          <div class="next-match-header">
-            <div class="next-match-competition"></div>
-          </div>
-          <div class="next-match-teams">
-            <div class="sepolia-sharks-team">
-              <img src="img/sharks/logo.png" alt="sharks game logo" />
-              <div class="team-name">Sepolia Sharks</div>
-            </div>
-            <div class="next-match-opposing-team">
-              <img alt="opponent logo" />
-              <div class="team-name"></div>
-            </div>
-          </div>
-          <div class="next-match-countdown">
-            <div>
-              <div class="counter" id="days-counter">00</div>
-              <div class="countdown-label">DAYS</div>
-            </div>
-            <div class="colons">:</div>
-            <div>
-              <div class="counter" id="hours-counter">00</div>
-              <div class="countdown-label">HRS</div>
-            </div>
-            <div class="colons">:</div>
-            <div>
-              <div class="counter" id="minutes-counter">00</div>
-              <div class="countdown-label">MINS</div>
-            </div>
-            <div class="colons">:</div>
-            <div>
-              <div class="counter" id="seconds-counter">00</div>
-              <div class="countdown-label">SECS</div>
-            </div>
-          </div>
-        </div>
+      <div
+        class="matches-container swiffy-slider slider-nav-noloop"
+        id="match-slider"
+      >
+        <ul class="slider-container" id="matches-slider-container">
+          <li>
+            <div class="next-match-wrap match">
+              <div class="next-match-main">
+                <div class="next-match-header">
+                  <div class="next-match-competition"></div>
+                </div>
+                <div class="next-match-teams">
+                  <div class="sepolia-sharks-team">
+                    <img src="img/sharks/logo.png" alt="sharks game logo" />
+                    <div class="team-name">Sepolia Sharks</div>
+                  </div>
+                  <div class="next-match-opposing-team">
+                    <img alt="opponent logo" />
+                    <div class="team-name"></div>
+                  </div>
+                </div>
+                <div class="next-match-countdown">
+                  <div>
+                    <div class="counter" id="days-counter">00</div>
+                    <div class="countdown-label">DAYS</div>
+                  </div>
+                  <div class="colons">:</div>
+                  <div>
+                    <div class="counter" id="hours-counter">00</div>
+                    <div class="countdown-label">HRS</div>
+                  </div>
+                  <div class="colons">:</div>
+                  <div>
+                    <div class="counter" id="minutes-counter">00</div>
+                    <div class="countdown-label">MINS</div>
+                  </div>
+                  <div class="colons">:</div>
+                  <div>
+                    <div class="counter" id="seconds-counter">00</div>
+                    <div class="countdown-label">SECS</div>
+                  </div>
+                </div>
+              </div>
 
-        <div class="next-match-footer">
-          <div class="next-match-date">-</div>
-          <div class="see-full-next-match-btn">Full view</div>
+              <div class="next-match-footer">
+                <div class="next-match-date">-</div>
+                <div
+                  class="see-full-next-match-btn"
+                  id="see-full-next-match-btn"
+                  onclick="openFullNextMatch()"
+                >
+                  Full view
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="slider-nav"></button>
+        <button type="button" class="slider-nav slider-nav-next"></button>
+
+        <!-- optional bullets -->
+        <div class="slider-indicators" id="matches-slider-indicators">
+          <button class="active next-match"></button>
         </div>
       </div>
 
-      <div class="full-next-match-container">
-        <span class="close-full-view">&times;</span>
+      <div class="full-next-match-container" id="full-next-match-container">
+        <span class="close-full-view" onclick="closeFullNextMatch()"
+          >&times;</span
+        >
         <button id="download-full-view-btn">&#x21e9;</button>
         <div class="full-next-match-wrap" id="full-next-match">
           <div class="full-next-match-title">
@@ -252,148 +276,21 @@
             <div class="full-next-match-date"></div>
             <button class="full-next-match-place"></button>
           </div>
-        </div>
-      </div>
-
-      <!-- Sponsor Banner Slider -->
-      <div
-        class="sponsor-slider swiffy-slider slider-item-helper"
-        id="sponsor-slider"
-        data-slider-nav-autoplay
-        data-slider-nav-loop
-        data-slider-nav-autoplay-interval="3000"
-      >
-        <ul class="slider-container">
-          <li class="sayprint-slide">
-            <div class="slide-body">
-              <img src="img/sponsors/sayprintadd.jpg" alt="sayprint add" />
-              <button
-                class="cta-slide-btn web-slide-btn"
-                onclick='window.location.href="https://www.sayprint.gr/main-home/"'
-              >
-                <img src="img/contact/website.png" alt="website logo" />
-              </button>
-            </div>
-          </li>
-          <li class="nebo-slide">
-            <div class="slide-body">
-              <img
-                src="img/sponsors/nebo_black.png"
-                class="nebo-slider-opacity-logo"
-                alt="nebo black logo"
-              />
-              <img
-                src="img/sponsors/nebo_black.png"
-                class="nebo-slider-logo"
-                alt="nebo logo"
-              />
-              <p>
-                Brunch / Specialty coffee, cocktails & wine<br />
-                Your all day heaven in Tinos
-              </p>
-              <div>
-                <button
-                  class="cta-slide-btn ig-slide-btn"
-                  onclick='window.location.href="https://www.instagram.com/nebo.tinos/?hl=el"'
-                >
-                  <img
-                    src="img/contact/insta-white.png"
-                    alt="nebo insta logo"
-                  />
-                </button>
-                <button
-                  class="cta-slide-btn tiktok-slide-btn"
-                  onclick='window.location.href="https://www.tiktok.com/@nebo.tinos"'
-                >
-                  <img
-                    src="img/contact/tiktok-white.png"
-                    alt="nebo tiktok logo"
-                  />
-                </button>
-              </div>
-            </div>
-          </li>
-          <li class="mini-van-taxi-slide">
-            <div class="slide-body">
-              <img
-                src="img/sponsors/MiniVanTaxi LOGO.jpg"
-                alt="minivan taxi logo"
-              />
-              <div>
-                <button
-                  class="cta-slide-btn ig-slide-btn"
-                  onclick='window.location.href="https://www.instagram.com/mini_van_taxi/?hl=en"'
-                >
-                  <img
-                    src="img/contact/insta-white.png"
-                    alt="minivan insta logo"
-                  />
-                </button>
-                <button
-                  class="cta-slide-btn web-slide-btn"
-                  onclick='window.location.href="https://minivantaxi.gr/"'
-                >
-                  <img src="img/contact/website.png" alt="website logo" />
-                </button>
-              </div>
-            </div>
-            <video
-              autoplay
-              muted
-              loop
-              playsinline
-              src="//minivantaxi.gr/wp-content/uploads/2025/05/video.mp4"
-              type="video/mp4"
-            ></video>
-          </li>
-          <li class="ab-slide">
-            <img src="img/sponsors/abxsharks.png" alt="an-sharks slide" />
-          </li>
-          <li class="zaharias-slide">
-            <div class="meet-zaharias-wrap" id="zaharias">
-              <img src="img/zaharias/happy.png" alt="zaharias" />
-              <div class="meet-zaharias-text">
-                <div class="meet-zaharias-title">Meet Zaharias</div>
-                <div class="meet-zaharias-descr">
-                  Η μασκότ της ομάδας μας απέκτησε φωνή. Ακολούθησέ τον Ζαχαρία
-                  εδώ για να μην χάνεις τις καυστικές απόψεις του... στα πάντα.
-                </div>
-                <div class="zaharias-social-btn-wrap">
-                  <a
-                    href="https://www.instagram.com/zaharias.shark/"
-                    class="zaharias-ig-btn"
-                  >
-                    <img
-                      src="img/contact/insta-white.png"
-                      alt="zaharias insta logo"
-                    />
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@zaxarias_shark"
-                    class="zaharias-tiktok-btn"
-                  >
-                    <img
-                      src="img/contact/tiktok-white.png"
-                      alt="zaharias tiktok logo"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <!-- navigation arrows -->
-        <button type="button" class="slider-nav"></button>
-        <button type="button" class="slider-nav slider-nav-next"></button>
-
-        <!-- optional bullets -->
-        <div class="slider-indicators">
-          <button class="active"></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
+          <div class="full-next-match-sponsors">
+            <img
+              src="img/sponsors/nebo_green.png"
+              class="full-next-match-nebo"
+              alt="nebo full match logo"
+            />
+            <img
+              src="img/sponsors/sayprintlogo.png"
+              alt="sayprint full match logo"
+            />
+            <img
+              src="img/sponsors/MiniVanTaxi LOGO.jpg"
+              alt="minivan full match logo"
+            />
+          </div>
         </div>
       </div>
     </main>
@@ -413,25 +310,6 @@
       src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
       defer
     ></script>
-    <script>
-      // Safe init after load
-      window.addEventListener("load", () => {
-        // Initialize all sliders
-        if (window.swiffyslider && typeof swiffyslider.init === "function") {
-          swiffyslider.init();
-        }
-
-        // Optional manual fallback: ensure autoplay is running
-        const slider = document.getElementById("sponsor-slider");
-        // timeout 2000ms, autopause enabled (true)
-        if (
-          window.swiffyslider &&
-          typeof swiffyslider.autoPlay === "function"
-        ) {
-          swiffyslider.autoPlay(slider, 7000, true);
-        }
-      });
-    </script>
     <script src="js/assets/team-logos.js"></script>
     <script src="js/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>

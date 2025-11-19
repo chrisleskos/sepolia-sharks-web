@@ -1,8 +1,3 @@
-counter = 1;
-totalImages = 4;
-imagesPath = "img/header/";
-let intervalId;
-
 let globalNextMatchYear;
 let globalNextMatchMonth;
 let globalNextMatchDate;
@@ -10,23 +5,34 @@ let globalNextMatchHour;
 let globalNextMatchMinute;
 let globalCountdownIntervalId;
 
-const seeFullMatchDetailsBtn = document.getElementsByClassName(
-  "see-full-next-match-btn"
-)[0];
-const fullNextMatchContainer = document.getElementsByClassName(
-  "full-next-match-container"
-)[0];
-const closeFullView = document.getElementsByClassName("close-full-view")[0];
-
-seeFullMatchDetailsBtn.onclick = () => {
-  fullNextMatchContainer.style.display = "flex";
-  htmlTagJs.classList.add("unscrollable");
-};
-
-closeFullView.onclick = () => {
-  fullNextMatchContainer.style.display = "none";
-  htmlTagJs.classList.remove("unscrollable");
-};
+const months = [
+  "JAN",
+  "FEB",
+  "MAR",
+  "APR",
+  "MAY",
+  "JUN",
+  "JUL",
+  "AUG",
+  "SEP",
+  "OCT",
+  "NOV",
+  "DEC",
+];
+const monthsGR = [
+  "Ιαν",
+  "Φεβ",
+  "Μάρ",
+  "Απρ",
+  "Μάι",
+  "Ιούν",
+  "Ιούλ",
+  "Αύγ",
+  "Σεπ",
+  "Οκτ",
+  "Νοέ",
+  "Δεκ",
+];
 
 fetch("/.netlify/functions/schedule")
   .then((res) => {
@@ -37,7 +43,6 @@ fetch("/.netlify/functions/schedule")
     return res.json();
   })
   .then((data) => {
-    console.log("Earliest game:", data);
     setNextGame(data);
   })
   .catch((err) => {
@@ -79,34 +84,6 @@ function setNextGame(json) {
   )[0];
 
   // Format Date
-  const months = [
-    "JAN",
-    "FEB",
-    "MAR",
-    "APR",
-    "MAY",
-    "JUN",
-    "JUL",
-    "AUG",
-    "SEP",
-    "OCT",
-    "NOV",
-    "DEC",
-  ];
-  const monthsGR = [
-    "Ιαν",
-    "Φεβ",
-    "Μάρ",
-    "Απρ",
-    "Μάι",
-    "Ιούν",
-    "Ιούλ",
-    "Αύγ",
-    "Σεπ",
-    "Οκτ",
-    "Νοέ",
-    "Δεκ",
-  ];
   const splittedDate = json.date.split("/");
   const day = splittedDate[0];
   const monthNumber = splittedDate[1];
@@ -164,6 +141,18 @@ function setNextGame(json) {
   fullNextMatchPlace.onclick = () => {
     window.open(`https://www.google.com/maps/search/${json.place}`, "_blank");
   };
+
+  fetch("/.netlify/functions/lastResults")
+    .then((res) => {
+      if (!res.ok) {
+        // catches 4xx/5xx
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      setPreviousGames(data);
+    });
 }
 
 function setNoGame() {
@@ -181,6 +170,119 @@ function setNoGame() {
   nextMatchTeams.innerHTML = `<div class="no-match">Δεν υπάρχουν πληροφορίες για το επόμενο παιχνίδι...</div>`;
   nextMatchCompetition.style.display = "none";
   clearInterval(globalCountdownIntervalId);
+
+  fetch("/.netlify/functions/lastResults")
+    .then((res) => {
+      if (!res.ok) {
+        // catches 4xx/5xx
+        throw new Error(`HTTP ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      setPreviousGames(data);
+    });
+}
+
+function setPreviousGames(json) {
+  let resultHTML = "";
+  let indicatorsHTML = "";
+
+  for (result of json.results) {
+    const splittedDate = result.date.split("/");
+    const day = splittedDate[0];
+    const monthNumber = splittedDate[1];
+    const month = months[monthNumber - 1];
+    const monthGR = monthsGR[splittedDate[1] - 1];
+    const year = splittedDate[2].substring(0, 4);
+    const time = splittedDate[2]
+      .substring(4, splittedDate[2].length)
+      .replace(":", ".");
+    const dayOfWeek = zellerDayOfWeek(
+      Number(splittedDate[2].substring(0, 4)),
+      Number(splittedDate[1]),
+      Number(splittedDate[0])
+    );
+
+    const dayOfWeekGR = zellerDayOfWeek(
+      Number(splittedDate[2].substring(0, 4)),
+      Number(splittedDate[1]),
+      Number(splittedDate[0]),
+      "GR"
+    );
+    resultHTML =
+      `
+        <li>
+          <div class="next-match-wrap match">
+            <div class="next-match-main">
+              <div class="next-match-header">
+                <div class="next-match-competition ${
+                  result.competition.toUpperCase().includes("CUP")
+                    ? ""
+                    : "league-match"
+                }">${result.competition}</div>
+              </div>
+              <div class="next-match-teams">
+                <div class="sepolia-sharks-team">
+                  <img src="img/sharks/logo.png" alt="sharks game logo" />
+                  <div class="team-name">Sepolia Sharks</div>
+                </div>
+                <div class="next-match-opposing-team">
+                  <img alt="opponent logo" src=${
+                    logos[result.teamImage.split("/").pop()]
+                  }
+                  />
+                  <div class="team-name">${result.teamName}</div>
+                </div>
+              </div>
+              <div class="match-score">
+                  <div class="score">${
+                    result.outcome.toUpperCase() === "L"
+                      ? Math.min(...result.score.map(Number))
+                      : Math.max(...result.score.map(Number))
+                  }</div>
+                  <div class="score">${
+                    result.outcome.toUpperCase() === "L"
+                      ? Math.max(...result.score.map(Number))
+                      : Math.min(...result.score.map(Number))
+                  }</div>
+              </div>
+            </div>
+
+            <div class="next-match-footer">
+              <div class="next-match-date">${month} ${day}, ${dayOfWeek.substring(
+        0,
+        3
+      )} 
+              </div>
+              <div class="see-full-next-match-btn">Full view</div>
+            </div>
+          </div>
+        </li>` + resultHTML;
+
+    indicatorsHTML =
+      `<button class=${
+        result.outcome.toUpperCase() === "L"
+          ? "loss"
+          : result.outcome.toUpperCase() === "W"
+          ? "win"
+          : "draw"
+      }></button>` + indicatorsHTML;
+  }
+
+  const matchesSliderContainer = document.getElementById(
+    "matches-slider-container"
+  );
+  matchesSliderContainer.innerHTML =
+    resultHTML + matchesSliderContainer.innerHTML;
+
+  const matchesSliderIndicators = document.getElementById(
+    "matches-slider-indicators"
+  );
+  matchesSliderIndicators.innerHTML =
+    indicatorsHTML + matchesSliderIndicators.innerHTML;
+
+  initSlider();
 }
 
 function updateCountdown() {
@@ -202,6 +304,24 @@ function updateCountdown() {
   nextMatchHoursCountdown.innerHTML = hoursDiff;
   nextMatchMinutesCountdown.innerHTML = minDiff;
   nextMatchSecondsCountdown.innerHTML = secDiff;
+}
+
+function openFullNextMatch() {
+  const fullNextMatchContainer = document.getElementById(
+    "full-next-match-container"
+  );
+
+  fullNextMatchContainer.style.display = "flex";
+  htmlTagJs.classList.add("unscrollable");
+}
+
+function closeFullNextMatch() {
+  const fullNextMatchContainer = document.getElementById(
+    "full-next-match-container"
+  );
+
+  fullNextMatchContainer.style.display = "none";
+  htmlTagJs.classList.remove("unscrollable");
 }
 
 function zellerDayOfWeek(year, month, day, lang = "EN") {
@@ -271,4 +391,16 @@ function getCountdown(year, month, date, hour, minute) {
     String(minDiff).padStart(2, "0"),
     String(secDiff).padStart(2, "0"),
   ];
+}
+
+function initSlider() {
+  // Initialize all sliders
+  if (window.swiffyslider && typeof swiffyslider.init === "function") {
+    swiffyslider.init();
+  }
+
+  // Optional manual fallback: ensure autoplay is running
+  const slider = document.getElementById("match-slider");
+  // timeout 2000ms, autopause enabled (true)
+  swiffyslider.slideTo(slider, 5);
 }
