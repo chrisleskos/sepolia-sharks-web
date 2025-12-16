@@ -246,7 +246,7 @@
   justify-content: flex-end;
   align-items: center;
   margin: 2rem 2rem;
-  width: 6rem;
+  min-width: 6rem;
 }
 
 .full-next-match-teams .full-next-match-team img {
@@ -264,6 +264,8 @@
   font-style: normal;
   color: white;
   border-bottom: rgba(50, 50, 50, 0.4) solid 1px;
+  text-align: center;
+  width: fit-content;
 }
 
 .full-next-match-sponsors {
