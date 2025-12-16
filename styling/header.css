@@ -1,20 +1,26 @@
 header {
   height: calc(
-    100vw * var(--header-img-ratio-height) / var(--header-img-ratio-width)
+    50vw * var(--header-img-ratio-height) / var(--header-img-ratio-width)
   );
 }
 
 header .background {
   position: absolute;
   width: 100vw;
-  z-index: 0;
   top: 0;
   left: 0;
 }
 
 header .background > img {
-  width: 100%;
+  width: 50%;
   height: auto;
-  transform: translate(-50%, 0);
-  animation: none;
+  /* animation: none; */
+}
+
+header .background::before,
+header .background::after {
+  width: 50%;
+  height: calc(
+    50vw * var(--header-img-ratio-height) / var(--header-img-ratio-width)
+  );
 }

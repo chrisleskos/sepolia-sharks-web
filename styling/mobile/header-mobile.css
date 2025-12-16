@@ -5,35 +5,140 @@ header {
   );
   width: 100vw;
   overflow: hidden;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.3);
   margin-top: var(--nav-height);
   z-index: 1;
+  background-color: rgba(190, 190, 190, 0.1);
+  background: url(../../img/header/header-bg.png);
+  background-size: 50% auto;
+  animation: running-letters 55s linear 0s infinite forwards normal;
+}
+
+header::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.8);
+  z-index: 0;
 }
 
 header .background {
   position: absolute;
-  height: 100%;
+  width: 100vw;
   z-index: 0;
   top: 0;
   left: 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+header .background > img,
+header .background::before,
+header .background::after {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  transform: translate(calc(-50% - 14px), -10px) scale(0.7)
+    rotate3d(1, -1, 0, 15deg);
+  box-shadow: 1px 1px 18px 10px black;
+  left: 50%;
+  top: 0;
+
+  border: 1px solid rgba(10, 10, 10, 0.2);
+  z-index: 5;
 }
 
 header .background > img {
-  position: absolute;
-  height: 100%;
-  width: auto;
-  transform: translate(-38%, 0);
-  left: 50%;
-  top: 0;
-  z-index: 0;
-  /* animation: x-axis-scroll 8s linear 0s forwards infinite; */
+  animation: open-card 20s linear 0s forwards infinite;
 }
 
-@keyframes x-axis-scroll {
-  from {
-    transform: translate(-20%, 0);
-    /* left: 420%; */
+header .background::before,
+header .background::after {
+  content: "";
+  height: calc(
+    100vw * var(--header-img-ratio-height) / var(--header-img-ratio-width)
+  );
+}
+
+header .background::before {
+  z-index: 4;
+  transform: translate(-50%, 2px) scale(0.7) rotate3d(1, -1, 0, 15deg);
+  background-color: var(--neon-color);
+  opacity: 0.8;
+}
+
+header .background::after {
+  z-index: 3;
+  transform: translate(calc(-50% + 15px), 13px) scale(0.7)
+    rotate3d(1, -1, 0, 15deg);
+  background-color: var(--neon-color);
+  opacity: 0.17;
+  animation: close-card 20s linear 0s forwards infinite;
+}
+
+@keyframes tilt {
+  0% {
+    transform: translate(calc(-50% - 14px), -10px) rotate3d(1, -1, 0, 15deg)
+      scale(0.7);
   }
-  to {
-    transform: translate(-55%, 0);
+  46% {
+    transform: translate(calc(-50% - 14px), -10px) rotate3d(1, -1, 0, 23deg)
+      scale(0.7);
+  }
+  52% {
+    transform: translate(calc(-50% - 14px), -10px) rotate3d(1, -1, 0, 23deg)
+      scale(0.7);
+  }
+  100% {
+    transform: translate(calc(-50% - 14px), -10px) rotate3d(1, -1, 0, 15deg)
+      scale(0.7);
+  }
+}
+
+@keyframes open-card {
+  0% {
+    transform: translate(calc(-50% - 14px), -10px) rotate3d(1, -1, 0, 15deg)
+      scale(0.7);
+  }
+  16% {
+    transform: translate(calc(-50% - 24px), -20px) rotate3d(1, -1, 0, 20deg)
+      scale(0.7);
+  }
+  52% {
+    transform: translate(calc(-50% - 24px), -20px) rotate3d(1, -1, 0, 20deg)
+      scale(0.7);
+  }
+  70% {
+    transform: translate(calc(-50% - 14px), -10px) rotate3d(1, -1, 0, 15deg)
+      scale(0.7);
+  }
+}
+
+@keyframes close-card {
+  0% {
+    transform: translate(calc(-50% + 15px), 13px) scale(0.7)
+      rotate3d(1, -1, 0, 15deg);
+  }
+  16% {
+    transform: translate(calc(-50% + 25px), 23px) scale(0.7)
+      rotate3d(1, -1, 0, 15deg);
+  }
+  52% {
+    transform: translate(calc(-50% + 25px), 23px) scale(0.7)
+      rotate3d(1, -1, 0, 15deg);
+  }
+  70% {
+    transform: translate(calc(-50% + 15px), 13px) scale(0.7)
+      rotate3d(1, -1, 0, 15deg);
+  }
+}
+
+@keyframes running-letters {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100%;
   }
 }
