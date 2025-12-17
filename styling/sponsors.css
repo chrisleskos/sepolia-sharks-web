@@ -1,0 +1,7 @@
+.sponsors-area {
+  --width: 60vw;
+}
+
+.nebo-add .nebo-final-slide .nebo-logo-container {
+  transform: translate(0, -20px);
+}

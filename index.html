@@ -98,11 +98,23 @@
       href="styling/home.css"
     />
 
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styling/mobile/sponsors-mobile.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen and (min-width: 730px)"
+      href="styling/sponsors.css"
+    />
+
     <link rel="stylesheet" type="text/css" href="styling/mobile/footer.css" />
 
     <!-- FONTS -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=Ephesis&family=Tektur:wght@400..900&family=Oxanium:wght@200..800&family=Bowlby+One+SC&family=Teko:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=DM+Serif+Text&family=UnifrakturCook:wght@700&family=Ephesis&family=Tektur:wght@400..900&family=Oxanium:wght@200..800&family=Bowlby+One+SC&family=Teko:wght@300..700&family=Oi&family=Leckerli+One&family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
 
@@ -298,6 +310,87 @@
           </div>
         </div>
       </div>
+      <div class="sponsors-area">
+        <div class="nebo-wrapper">
+          <div class="nebo-container">
+            <div
+              class="nebo-add"
+              onClick="window.location.href='https://www.instagram.com/nebo.tinos'"
+            >
+              <svg viewBox="0 0 1000 660" class="nebo-mask">
+                <defs>
+                  <mask id="text-mask">
+                    <!-- everything visible -->
+                    <rect width="100%" height="100%" fill="white" />
+                    <!-- text punches hole -->
+                    <text
+                      x="50%"
+                      y="70%"
+                      text-anchor="middle"
+                      font-size="350"
+                      font-weight="bolder"
+                      fill="black"
+                    >
+                      drinks.
+                    </text>
+                  </mask>
+                </defs>
+
+                <!-- parent color layer -->
+                <rect
+                  id="svg-bg"
+                  width="100%"
+                  height="100%"
+                  fill="rgba(0, 0, 0, 0.65)"
+                  mask="url(#text-mask)"
+                />
+              </svg>
+              <div class="nebo-final-slide">
+                <div class="nebo-logo-container">
+                  <img
+                    class="nebo-add-logo"
+                    src="img/slider/nebo-logo.png"
+                    alt="nebo-logo"
+                  />
+                  <img
+                    class="nebo-add-text"
+                    src="img/slider/nebo-text.png"
+                    alt="nebo-logo"
+                  />
+                </div>
+                <svg viewBox="0 0 1000 660" class="nebo-final-mask">
+                  <defs>
+                    <mask id="final-text-mask">
+                      <!-- everything visible -->
+                      <rect width="100%" height="100%" fill="white" />
+                      <!-- text punches hole -->
+                      <text
+                        x="50%"
+                        y="70%"
+                        text-anchor="middle"
+                        font-size="400"
+                        font-weight="bolder"
+                        fill="black"
+                      >
+                        nebo.
+                      </text>
+                    </mask>
+                  </defs>
+
+                  <!-- parent color layer -->
+                  <rect
+                    id="svg-bg"
+                    width="100%"
+                    height="100%"
+                    fill="rgba(0, 0, 0, 0.04)"
+                    mask="url(#final-text-mask)"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="sharkattack">shark attack</div>
@@ -317,6 +410,7 @@
     ></script>
     <script src="js/assets/team-logos.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/sponsors.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script>
       document.getElementById("download-full-view-btn").onclick = function () {

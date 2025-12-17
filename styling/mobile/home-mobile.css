@@ -552,8 +552,8 @@
 }
 
 .matches-container .slider-indicators > button {
-  height: 1.3rem;
-  width: 1.3rem;
+  height: 0.9rem;
+  width: 0.9rem;
   border-radius: 50%;
   margin: 0 0.25rem;
   overflow: hidden;
@@ -562,12 +562,12 @@
 
 .matches-container .slider-indicators > button.loss {
   border: 1.5px #971a1a solid;
-  background: linear-gradient(45deg, #ff6b70, #6a0303, #ff6b70);
+  background: linear-gradient(45deg, #ff6b70, #d12121, #ff6b70);
 }
 
 .matches-container .slider-indicators > button.win {
   border: 1.5px #276221 solid;
-  background: linear-gradient(45deg, #5fd89e, #276221, #5fd89e);
+  background: linear-gradient(45deg, #5fd89e, #4aa53f, #5fd89e);
 }
 
 .matches-container .slider-indicators > button.draw {
@@ -582,8 +582,8 @@
 
 .matches-container .slider-indicators > button.active,
 .matches-container .slider-indicators > button:hover {
-  height: 1.36rem;
-  width: 1.36rem;
+  height: 0.95rem;
+  width: 0.95rem;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
 }
 

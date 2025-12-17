@@ -1,0 +1,30 @@
+let neboInterval;
+let neboAddStep = 0;
+
+neboAdd = () => {
+  var text = document.querySelector("svg.nebo-mask text");
+  var image = document.querySelector(".sponsors-area .nebo-add");
+  var finalSlide = document.querySelector(".nebo-add .nebo-final-slide");
+  if (neboAddStep === 0) {
+    finalSlide.style.display = "none";
+    text.textContent = "coffee.";
+    clearInterval(neboInterval);
+    neboInterval = setInterval(neboAdd, 1500);
+    image.style.backgroundImage = `url("../../img/slider/nebo-coffee.png")`;
+  } else if (neboAddStep === 1) {
+    text.textContent = "food.";
+    image.style.backgroundImage = `url("../../img/slider/nebo-food.png")`;
+  } else if (neboAddStep === 2) {
+    text.textContent = "drinks.";
+    image.style.backgroundImage = `url("../../img/slider/nebo-wine.png")`;
+  } else if (neboAddStep === 3) {
+    finalSlide.style.display = "flex";
+    neboAddStep = -1;
+    clearInterval(neboInterval);
+    neboInterval = setInterval(neboAdd, 6000);
+  }
+
+  neboAddStep++;
+};
+
+neboAdd();
