@@ -9,7 +9,7 @@ neboAdd = () => {
     finalSlide.style.display = "none";
     text.textContent = "coffee.";
     clearInterval(neboInterval);
-    neboInterval = setInterval(neboAdd, 1500);
+    neboInterval = setInterval(neboAdd, 2000);
     image.style.backgroundImage = `url("../../img/slider/nebo-coffee.png")`;
   } else if (neboAddStep === 1) {
     text.textContent = "food.";
@@ -21,7 +21,7 @@ neboAdd = () => {
     finalSlide.style.display = "flex";
     neboAddStep = -1;
     clearInterval(neboInterval);
-    neboInterval = setInterval(neboAdd, 6000);
+    neboInterval = setInterval(neboAdd, 9000);
   }
 
   neboAddStep++;
