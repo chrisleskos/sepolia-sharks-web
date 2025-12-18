@@ -60,6 +60,10 @@ nav .nav-logo img {
   height: 70%;
 }
 
+nav .nav-logo img.minivan {
+  height: 100%;
+}
+
 .nav-sharks-logo {
   margin: 0 0 0 1rem;
   display: flex;

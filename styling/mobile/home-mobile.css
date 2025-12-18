@@ -282,7 +282,10 @@
   height: 3.6rem;
 }
 .full-next-match-sponsors > img.full-next-match-nebo {
-  height: 4.5rem;
+  height: 5rem;
+}
+.full-next-match-sponsors > img.minivan {
+  height: 6rem;
 }
 
 .matches-container {
