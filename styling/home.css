@@ -50,10 +50,6 @@
   margin: auto 0 0 0;
 }
 
-.full-next-match-container #download-full-view-btn {
-  top: 95%;
-}
-
 .full-next-match-wrap {
   --height: 100vh;
   width: calc(var(--height) * 9 / 16);
