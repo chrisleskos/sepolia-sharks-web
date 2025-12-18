@@ -46,6 +46,10 @@
   font-size: 3rem;
 }
 
+.full-next-match-wrap .full-next-match-title {
+  margin: auto 0 0 0;
+}
+
 .full-next-match-container #download-full-view-btn {
   top: 95%;
 }
