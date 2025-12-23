@@ -10,13 +10,13 @@ neboAdd = () => {
     text.textContent = "coffee.";
     clearInterval(neboInterval);
     neboInterval = setInterval(neboAdd, 2000);
-    image.style.backgroundImage = `url("../../img/slider/nebo-coffee.png")`;
+    image.style.backgroundImage = `url("../../img/slider/nebo-coffee.webp")`;
   } else if (neboAddStep === 1) {
     text.textContent = "food.";
-    image.style.backgroundImage = `url("../../img/slider/nebo-food.png")`;
+    image.style.backgroundImage = `url("../../img/slider/nebo-food.webp")`;
   } else if (neboAddStep === 2) {
     text.textContent = "drinks.";
-    image.style.backgroundImage = `url("../../img/slider/nebo-wine.png")`;
+    image.style.backgroundImage = `url("../../img/slider/nebo-wine.webp")`;
   } else if (neboAddStep === 3) {
     finalSlide.style.display = "flex";
     neboAddStep = -1;
