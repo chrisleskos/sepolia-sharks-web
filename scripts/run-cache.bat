@@ -1,7 +1,7 @@
 @echo off
 echo Running logo cache script...
 
-REM IMPORTANT: use CALL so control returns
+REM Run npm script
 call npm run cache-logos
 if errorlevel 1 (
     echo.
@@ -13,7 +13,7 @@ echo.
 echo Logo cache completed successfully.
 echo.
 
-REM Git add (current repo + specific file)
+REM Git add
 git add .
 git add ../js/assets/team-logos.js
 if errorlevel 1 (
@@ -21,11 +21,17 @@ if errorlevel 1 (
     goto end
 )
 
-REM Git commit
-git commit -m "Update cached logos"
+REM Check if there is anything to commit
+git diff --cached --quiet
 if errorlevel 1 (
-    echo Git commit FAILED! (maybe nothing to commit?)
-    goto end
+    echo Changes detected. Committing...
+    git commit -m "Update cached logos"
+    if errorlevel 1 (
+        echo Git commit FAILED!
+        goto end
+    )
+) else (
+    echo No changes to commit.
 )
 
 REM Git push
@@ -36,7 +42,7 @@ if errorlevel 1 (
 )
 
 echo.
-echo Git commit & push completed successfully.
+echo Git operations completed successfully.
 
 :end
 echo.
