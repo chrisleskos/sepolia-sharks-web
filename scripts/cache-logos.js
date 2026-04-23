@@ -8,8 +8,7 @@ import { load } from "cheerio";
 import fs from "fs";
 import path from "path";
 
-async function run() {
-  const url = "https://www.basketaki.com/teams/sepolia-sharks/standings";
+async function run(url) {
   const response = await fetch(url);
   const html = await response.text();
   const $ = load(html);
@@ -35,7 +34,7 @@ async function run() {
     const buffer = Buffer.from(await imgResp.arrayBuffer());
 
     const base64Image = `data:${imgResp.headers.get(
-      "content-type"
+      "content-type",
     )};base64,${buffer.toString("base64")}`;
 
     const fileName = absoluteUrl.split("/").pop();
@@ -50,10 +49,11 @@ async function run() {
   fs.writeFileSync(
     path.join("..", "js", "assets", "team-logos.js"),
     outputJs,
-    "utf8"
+    "utf8",
   );
 
   console.log("Created → /js/assets/team-logos.js");
 }
 
-run();
+run("https://www.basketaki.com/teams/sepolia-sharks/standings");
+run("https://www.basketaki.com/teams/sepolia-sharks/schedule");
